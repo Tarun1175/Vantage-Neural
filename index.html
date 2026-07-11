@@ -1,0 +1,3660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0">
+    <meta name="description"
+          content="Vantage Neural deploys
+          Military-Grade Purple Team Cyber
+          Security and Personalized Neural
+          AI Assistants for businesses
+          across India. Get your Free
+          Digital Audit today.">
+    <meta name="keywords"
+          content="AI Automation India,
+          Cyber Security India,
+          WhatsApp AI Bot,
+          Purple Team Security,
+          Business Automation Delhi,
+          Neural AI Assistant">
+    <meta name="author"
+          content="Vantage Neural
+          Global Systems">
+    <meta property="og:title"
+          content="Vantage Neural |
+          AI & Cyber Security India">
+    <meta property="og:description"
+          content="Defend. Automate.
+          Dominate. Military-grade security
+          and personalized AI for
+          Indian businesses.">
+    <meta property="og:type"
+          content="website">
+    <meta name="theme-color"
+          content="#060f1e">
+
+    <title>Vantage Neural |
+           Global AI & Cyber Security
+    </title>
+
+    <link rel="icon"
+          type="image/svg+xml"
+          href="data:image/svg+xml,
+          <svg xmlns='http://www.w3.org/2000/svg'
+          viewBox='0 0 100 100'>
+          <rect width='100' height='100'
+          rx='12' fill='%23060f1e'/>
+          <text y='.9em' font-size='60'
+          x='10' fill='%2300d4ff'
+          font-family='Arial'
+          font-weight='900'>VN</text>
+          </svg>">
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap"
+          rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
+    </script>
+
+    <style>
+        :root {
+            --p:    #00d4ff;
+            --s:    #6c63ff;
+            --a:    #00ff9d;
+            --b:    #0066ff;
+            --navy: #060f1e;
+            --mid:  #0a1628;
+            --deep: #0d1f3c;
+            --card: rgba(13,31,60,0.8);
+            --bdr:  rgba(0,212,255,0.1);
+            --bdr2: rgba(108,99,255,0.12);
+            --t:    #ccd6f6;
+            --td:   #8892b0;
+            --tb:   #e6f1ff;
+            --gc:   0 0 30px rgba(0,212,255,0.2);
+            --gp:   0 0 30px rgba(108,99,255,0.2);
+            --sh:   0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        *{margin:0;padding:0;
+          box-sizing:border-box;}
+        html{scroll-behavior:smooth;}
+        body{
+            background:var(--navy);
+            color:var(--t);
+            font-family:'Space Grotesk',
+                        sans-serif;
+            overflow-x:hidden;
+            cursor:none;
+        }
+
+        /* SCROLL PROGRESS */
+        #spb{
+            position:fixed;
+            top:0;left:0;
+            height:2px;width:0%;
+            background:linear-gradient(
+                90deg,var(--s),
+                var(--p),var(--a)
+            );
+            z-index:99999;
+        }
+
+        /* LOADER */
+        #loader{
+            position:fixed;inset:0;
+            background:var(--navy);
+            z-index:999999;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            gap:24px;
+            transition:opacity .8s,
+                       visibility .8s;
+        }
+        #loader.gone{
+            opacity:0;visibility:hidden;
+        }
+        .ll{
+            font-family:'Orbitron',sans-serif;
+            font-size:24px;font-weight:900;
+            letter-spacing:5px;
+            background:linear-gradient(
+                135deg,var(--p),var(--s)
+            );
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+        .ls{
+            font-size:9px;letter-spacing:6px;
+            color:var(--td);
+            text-transform:uppercase;
+        }
+        .lb{
+            width:200px;height:1px;
+            background:rgba(255,255,255,0.06);
+            overflow:hidden;
+        }
+        .lf{
+            height:100%;
+            background:linear-gradient(
+                90deg,var(--s),var(--p)
+            );
+            animation:lda 2.3s ease forwards;
+        }
+        @keyframes lda{
+            from{width:0}to{width:100%}
+        }
+
+        /* CURSOR */
+        #cur{
+            width:22px;height:22px;
+            border:1.5px solid var(--p);
+            border-radius:50%;
+            position:fixed;
+            pointer-events:none;
+            z-index:99998;
+            transition:transform .2s,
+                       border-color .3s,
+                       background .3s;
+            mix-blend-mode:screen;
+        }
+        #cdot{
+            width:5px;height:5px;
+            background:var(--p);
+            border-radius:50%;
+            position:fixed;
+            pointer-events:none;
+            z-index:99998;
+            box-shadow:0 0 8px var(--p);
+        }
+        #cur.big{
+            transform:scale(2.8);
+            background:rgba(0,212,255,0.08);
+            border-color:var(--s);
+        }
+
+        ::-webkit-scrollbar{width:3px}
+        ::-webkit-scrollbar-track{
+            background:var(--navy)}
+        ::-webkit-scrollbar-thumb{
+            background:var(--s)}
+
+        /* 3D CANVAS */
+        #bgC{
+            position:fixed;inset:0;
+            z-index:0;
+        }
+
+        /* BG LAYERS */
+        .bg-base{
+            position:fixed;inset:0;z-index:0;
+            background:linear-gradient(
+                160deg,
+                #060f1e 0%,
+                #0a1628 35%,
+                #0d1f3c 65%,
+                #060f1e 100%
+            );
+        }
+        .bg-rad{
+            position:fixed;inset:0;z-index:0;
+            background:
+                radial-gradient(
+                    ellipse 80% 60% at 15% 10%,
+                    rgba(108,99,255,0.05) 0%,
+                    transparent 60%
+                ),
+                radial-gradient(
+                    ellipse 60% 50% at 85% 90%,
+                    rgba(0,212,255,0.04) 0%,
+                    transparent 60%
+                );
+        }
+        .bg-grid{
+            position:fixed;inset:0;z-index:0;
+            background-image:
+                linear-gradient(
+                    rgba(0,212,255,0.02) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(90deg,
+                    rgba(0,212,255,0.02) 1px,
+                    transparent 1px
+                );
+            background-size:80px 80px;
+            mask-image:radial-gradient(
+                ellipse 100% 100% at 50% 50%,
+                black 30%,transparent 80%
+            );
+        }
+
+        /* NAVBAR */
+        nav{
+            position:fixed;top:0;
+            width:100%;z-index:1000;
+            padding:0 60px;height:72px;
+            display:flex;align-items:center;
+            justify-content:space-between;
+            background:rgba(6,15,30,0.85);
+            backdrop-filter:blur(20px);
+            border-bottom:1px solid
+                rgba(255,255,255,0.05);
+            transition:all .3s;
+        }
+        nav.scrolled{
+            background:rgba(6,15,30,0.97);
+            box-shadow:
+                0 4px 40px rgba(0,0,0,0.4);
+        }
+        .logo-main{
+            font-family:'Orbitron',sans-serif;
+            font-size:18px;font-weight:900;
+            letter-spacing:4px;
+            background:linear-gradient(
+                135deg,var(--p),var(--s)
+            );
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+        .logo-sub{
+            font-size:8px;letter-spacing:5px;
+            color:var(--td);
+            text-transform:uppercase;
+        }
+        .nav-links{
+            display:flex;align-items:center;
+            gap:28px;list-style:none;
+        }
+        .nav-links a{
+            font-size:11px;letter-spacing:1.5px;
+            text-transform:uppercase;
+            color:var(--td);
+            text-decoration:none;
+            transition:color .3s;
+            position:relative;
+            padding-bottom:4px;
+        }
+        .nav-links a::after{
+            content:'';position:absolute;
+            bottom:0;left:0;width:0;height:1px;
+            background:var(--p);
+            transition:width .3s;
+        }
+        .nav-links a:hover{color:var(--tb);}
+        .nav-links a:hover::after{width:100%;}
+        .nav-btn{
+            padding:9px 20px;
+            border:1px solid rgba(0,212,255,.35);
+            border-radius:6px;
+            color:var(--p)!important;
+            font-size:11px!important;
+            background:rgba(0,212,255,.05)
+                !important;
+            transition:all .3s!important;
+        }
+        .nav-btn:hover{
+            background:rgba(0,212,255,.12)
+                !important;
+            box-shadow:var(--gc);
+        }
+        .nav-btn::after{display:none!important;}
+
+        /* HAMBURGER */
+        .ham{
+            display:none;
+            flex-direction:column;
+            gap:5px;cursor:none;padding:8px;
+        }
+        .ham span{
+            display:block;width:24px;height:2px;
+            background:var(--p);border-radius:2px;
+            transition:all .3s;
+        }
+        .ham.open span:nth-child(1){
+            transform:translateY(7px) rotate(45deg);
+        }
+        .ham.open span:nth-child(2){opacity:0;}
+        .ham.open span:nth-child(3){
+            transform:translateY(-7px) rotate(-45deg);
+        }
+
+        /* MOBILE MENU */
+        .mob-menu{
+            position:fixed;
+            top:72px;right:-100%;
+            width:280px;
+            height:calc(100vh - 72px);
+            background:rgba(6,15,30,0.98);
+            backdrop-filter:blur(24px);
+            border-left:1px solid var(--bdr);
+            z-index:999;
+            display:flex;flex-direction:column;
+            padding:40px 32px;gap:8px;
+            transition:right .4s
+                cubic-bezier(0.16,1,0.3,1);
+        }
+        .mob-menu.open{right:0;}
+        .mob-menu a{
+            font-size:14px;letter-spacing:2px;
+            text-transform:uppercase;
+            color:var(--td);text-decoration:none;
+            padding:16px 0;
+            border-bottom:1px solid
+                rgba(255,255,255,0.05);
+            transition:color .3s,padding-left .3s;
+        }
+        .mob-menu a:hover{
+            color:var(--p);padding-left:8px;
+        }
+        .mob-cta{
+            margin-top:20px;padding:14px 20px;
+            background:linear-gradient(
+                135deg,var(--p),var(--s)
+            );
+            color:white!important;
+            border-radius:8px;text-align:center;
+            font-weight:700!important;
+        }
+
+        /* HERO */
+        #hero{
+            position:relative;z-index:1;
+            min-height:100vh;
+            display:flex;align-items:center;
+            justify-content:center;
+            text-align:center;
+            padding:100px 20px 80px;
+        }
+        .hero-floor{
+            position:absolute;
+            bottom:0;left:0;
+            width:100%;height:50%;
+            background-image:
+                linear-gradient(
+                    rgba(0,212,255,0.04) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(90deg,
+                    rgba(0,212,255,0.04) 1px,
+                    transparent 1px
+                );
+            background-size:60px 60px;
+            transform:perspective(400px)
+                      rotateX(60deg);
+            transform-origin:bottom;
+            mask-image:linear-gradient(
+                to bottom,transparent,
+                rgba(0,0,0,0.4) 40%,black 100%
+            );
+            pointer-events:none;
+        }
+        .hw{
+            position:relative;z-index:2;
+            max-width:860px;
+        }
+        .hb{
+            display:inline-flex;
+            align-items:center;gap:10px;
+            padding:7px 20px;
+            border:1px solid var(--bdr);
+            border-radius:100px;
+            font-size:10px;letter-spacing:3px;
+            text-transform:uppercase;
+            color:var(--p);margin-bottom:44px;
+            background:rgba(0,212,255,0.04);
+            animation:fu .8s ease both;
+        }
+        .hd{
+            width:6px;height:6px;
+            background:var(--a);
+            border-radius:50%;
+            animation:dp 2s infinite;
+            box-shadow:0 0 8px var(--a);
+        }
+        @keyframes dp{
+            0%,100%{transform:scale(1);}
+            50%{transform:scale(0.6);}
+        }
+        .ht{
+            font-family:'Orbitron',sans-serif;
+            font-size:clamp(38px,6.5vw,86px);
+            font-weight:900;line-height:1.04;
+            letter-spacing:-1px;
+            margin-bottom:32px;
+            animation:fu .8s .15s ease both;
+        }
+        .ht1{display:block;color:var(--tb);}
+        .ht2{
+            display:block;
+            background:linear-gradient(
+                120deg,
+                var(--p) 0%,var(--s) 50%,
+                var(--a) 100%
+            );
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-size:200% 200%;
+            animation:gm 5s ease infinite,
+                fu .8s .15s ease both;
+        }
+        @keyframes gm{
+            0%{background-position:0% 50%;}
+            50%{background-position:100% 50%;}
+            100%{background-position:0% 50%;}
+        }
+        .hsub{
+            font-size:16px;color:var(--td);
+            max-width:540px;
+            margin:0 auto 48px;
+            line-height:1.9;min-height:72px;
+            animation:fu .8s .3s ease both;
+        }
+        .twc{
+            display:inline-block;
+            width:2px;height:16px;
+            background:var(--p);
+            margin-left:2px;
+            vertical-align:middle;
+            animation:bl .9s infinite;
+        }
+        @keyframes bl{
+            0%,100%{opacity:1;}50%{opacity:0;}
+        }
+        .hbtns{
+            display:flex;gap:14px;
+            justify-content:center;
+            flex-wrap:wrap;
+            animation:fu .8s .45s ease both;
+        }
+
+        /* TRUST BADGES */
+        .trust-row{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:16px;flex-wrap:wrap;
+            margin-top:36px;padding-top:24px;
+            border-top:1px solid
+                rgba(255,255,255,0.05);
+            animation:fu .8s .7s ease both;
+        }
+        .tbadge{
+            display:flex;align-items:center;
+            gap:7px;font-size:9px;
+            letter-spacing:1.5px;
+            color:var(--td);
+            text-transform:uppercase;
+            padding:5px 13px;
+            border:1px solid
+                rgba(255,255,255,0.06);
+            border-radius:100px;
+            background:rgba(255,255,255,0.02);
+            white-space:nowrap;
+        }
+
+        /* STATS */
+        .hst{
+            display:flex;
+            margin-top:32px;
+            animation:fu .8s .6s ease both;
+            border:1px solid
+                rgba(255,255,255,0.05);
+            border-radius:14px;
+            overflow:hidden;
+            background:rgba(10,22,40,0.6);
+            backdrop-filter:blur(16px);
+        }
+        .stat{
+            flex:1;padding:24px 20px;
+            text-align:center;
+            border-right:1px solid
+                rgba(255,255,255,0.05);
+            transition:background .3s;
+        }
+        .stat:last-child{border-right:none;}
+        .stat:hover{
+            background:rgba(0,212,255,0.03);
+        }
+        .sn{
+            display:block;
+            font-family:'Orbitron',sans-serif;
+            font-size:34px;font-weight:900;
+            color:var(--p);
+            line-height:1;margin-bottom:6px;
+        }
+        .sl{
+            font-size:9px;letter-spacing:2px;
+            color:var(--td);
+            text-transform:uppercase;
+        }
+
+        /* BUTTONS */
+        .bp{
+            padding:14px 36px;
+            background:linear-gradient(
+                135deg,var(--p),var(--s)
+            );
+            color:white;border:none;
+            border-radius:8px;
+            font-family:'Space Grotesk',
+                         sans-serif;
+            font-size:12px;font-weight:700;
+            letter-spacing:2px;
+            text-transform:uppercase;
+            text-decoration:none;cursor:none;
+            transition:all .3s;
+            position:relative;overflow:hidden;
+            box-shadow:0 8px 24px
+                rgba(0,212,255,0.25);
+            display:inline-block;
+        }
+        .bp:hover{
+            transform:translateY(-3px);
+            box-shadow:0 16px 40px
+                rgba(0,212,255,0.4);
+        }
+        .bp::before{
+            content:'';position:absolute;
+            top:0;left:-100%;
+            width:100%;height:100%;
+            background:linear-gradient(90deg,
+                transparent,
+                rgba(255,255,255,0.18),
+                transparent
+            );
+            transition:left .4s;
+        }
+        .bp:hover::before{left:100%;}
+        .bs{
+            padding:14px 36px;
+            background:transparent;
+            color:var(--t);
+            border:1px solid
+                rgba(255,255,255,0.12);
+            border-radius:8px;
+            font-family:'Space Grotesk',
+                         sans-serif;
+            font-size:12px;font-weight:600;
+            letter-spacing:2px;
+            text-transform:uppercase;
+            text-decoration:none;cursor:none;
+            transition:all .3s;
+            display:inline-block;
+        }
+        .bs:hover{
+            border-color:var(--p);
+            color:var(--p);
+            background:rgba(0,212,255,0.04);
+            transform:translateY(-3px);
+        }
+
+        /* SECTIONS */
+        section{
+            position:relative;z-index:1;
+            padding:110px 60px;
+        }
+        .stag{
+            display:flex;align-items:center;
+            gap:14px;font-size:10px;
+            letter-spacing:5px;
+            text-transform:uppercase;
+            color:var(--p);margin-bottom:18px;
+        }
+        .stag::before{
+            content:'';width:28px;height:1px;
+            background:var(--p);
+            box-shadow:0 0 8px var(--p);
+        }
+        .stitle{
+            font-family:'Orbitron',sans-serif;
+            font-size:clamp(24px,4vw,50px);
+            font-weight:700;line-height:1.1;
+            margin-bottom:20px;
+            color:var(--tb);letter-spacing:-.5px;
+        }
+        .ssub{
+            font-size:15px;color:var(--td);
+            line-height:1.9;max-width:520px;
+        }
+
+        /* SECTOR TAGS */
+        .tags{
+            display:flex;gap:8px;
+            flex-wrap:wrap;
+            margin:16px 0 24px;
+        }
+        .tag{
+            padding:4px 12px;
+            border-radius:100px;
+            font-size:10px;letter-spacing:2px;
+        }
+        .tag-p{
+            background:rgba(0,212,255,0.08);
+            border:1px solid rgba(0,212,255,0.2);
+            color:var(--p);
+        }
+        .tag-s{
+            background:rgba(108,99,255,0.08);
+            border:1px solid rgba(108,99,255,0.2);
+            color:var(--s);
+        }
+        .tag-a{
+            background:rgba(0,255,157,0.08);
+            border:1px solid rgba(0,255,157,0.2);
+            color:var(--a);
+        }
+
+        /* SERVICES */
+        .svc-hdr{
+            text-align:center;
+            margin-bottom:64px;
+        }
+        .svc-hdr .stag{
+            justify-content:center;
+        }
+        .svc-hdr .stag::before{display:none;}
+        .sgrid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:18px;
+            max-width:1140px;margin:0 auto;
+        }
+        .sc{
+            background:var(--card);
+            border:1px solid
+                rgba(255,255,255,0.06);
+            border-radius:18px;
+            padding:42px 32px;
+            position:relative;overflow:hidden;
+            transition:all .5s
+                cubic-bezier(0.16,1,0.3,1);
+            cursor:none;
+            backdrop-filter:blur(10px);
+            box-shadow:var(--sh);
+        }
+        .sc::before{
+            content:'';position:absolute;
+            top:0;left:20%;right:20%;height:1px;
+            transform:scaleX(0);
+            transition:transform .4s;
+        }
+        .sc.ai::before{
+            background:linear-gradient(90deg,
+                transparent,var(--p),transparent);
+        }
+        .sc.cy::before{
+            background:linear-gradient(90deg,
+                transparent,var(--s),transparent);
+        }
+        .sc.bu::before{
+            background:linear-gradient(90deg,
+                transparent,var(--a),transparent);
+        }
+        .sc:hover::before{transform:scaleX(1);}
+        .sc:hover{
+            transform:translateY(-10px);
+            border-color:rgba(0,212,255,0.15);
+        }
+        .siw{
+            width:62px;height:62px;
+            border-radius:15px;
+            display:flex;align-items:center;
+            justify-content:center;
+            font-size:26px;margin-bottom:24px;
+        }
+        .ia{background:rgba(0,212,255,0.08);
+            border:1px solid rgba(0,212,255,.18);}
+        .ic{background:rgba(108,99,255,0.08);
+            border:1px solid rgba(108,99,255,.18);}
+        .ib{background:rgba(0,255,157,0.08);
+            border:1px solid rgba(0,255,157,.18);}
+        .sn2{
+            font-family:'Orbitron',sans-serif;
+            font-size:16px;font-weight:700;
+            color:var(--tb);margin-bottom:12px;
+        }
+        .sd{
+            font-size:14px;color:var(--td);
+            line-height:1.8;margin-bottom:24px;
+        }
+        .sl2{list-style:none;margin-bottom:30px;}
+        .sl2 li{
+            font-size:13px;color:var(--td);
+            padding:8px 0;
+            border-bottom:1px solid
+                rgba(255,255,255,0.04);
+            display:flex;align-items:center;
+            gap:10px;transition:color .2s;
+        }
+        .sl2 li:hover{color:var(--t);}
+        .sl2 li::before{
+            content:'▸';color:var(--p);
+            font-size:9px;flex-shrink:0;
+        }
+        .sp2{
+            font-family:'Orbitron',sans-serif;
+            font-size:11px;color:var(--p);
+            letter-spacing:3px;opacity:.8;
+        }
+
+        /* PROCESS */
+        #process{text-align:center;}
+        #process .stag{justify-content:center;}
+        #process .stag::before{display:none;}
+        .pgrid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:0;max-width:1040px;
+            margin:70px auto 0;position:relative;
+        }
+        .pline{
+            position:absolute;
+            top:46px;left:12.5%;width:75%;
+            height:1px;
+            background:linear-gradient(90deg,
+                transparent,
+                rgba(108,99,255,0.4),
+                rgba(0,212,255,0.6),
+                rgba(108,99,255,0.4),
+                transparent
+            );
+        }
+        .ps{
+            padding:0 20px 20px;
+            position:relative;z-index:1;
+        }
+        .pn{
+            width:90px;height:90px;
+            border-radius:50%;
+            background:var(--mid);
+            border:1px solid var(--bdr);
+            display:flex;align-items:center;
+            justify-content:center;
+            font-family:'Orbitron',sans-serif;
+            font-size:24px;font-weight:900;
+            color:var(--p);
+            margin:0 auto 26px;
+            position:relative;z-index:1;
+            transition:all .4s;
+        }
+        .ps:hover .pn{
+            background:linear-gradient(135deg,
+                rgba(0,212,255,0.1),
+                rgba(108,99,255,0.1)
+            );
+            border-color:var(--p);
+            box-shadow:var(--gc);
+            transform:scale(1.08);
+        }
+        .pt{
+            font-size:14px;font-weight:700;
+            color:var(--tb);margin-bottom:10px;
+        }
+        .px{
+            font-size:13px;color:var(--td);
+            line-height:1.8;
+        }
+
+        /* CASE STUDIES */
+        #casestudy .cs-hdr{
+            text-align:center;
+            margin-bottom:80px;
+        }
+        #casestudy .cs-hdr .stag{
+            justify-content:center;
+        }
+        #casestudy .cs-hdr .stag::before{
+            display:none;
+        }
+        .cw{
+            max-width:1040px;
+            margin:0 auto 100px;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:70px;align-items:center;
+        }
+        .cw:last-child{margin-bottom:0;}
+        .co{
+            background:var(--card);
+            border:1px solid
+                rgba(255,255,255,0.06);
+            border-radius:20px;padding:30px;
+            position:relative;
+            box-shadow:var(--sh);
+        }
+        .co::before{
+            content:'';position:absolute;
+            top:0;left:15%;right:15%;height:1px;
+            background:linear-gradient(90deg,
+                transparent,var(--p),transparent
+            );
+        }
+        .cwin{
+            background:rgba(4,10,20,0.7);
+            border-radius:13px;overflow:hidden;
+            border:1px solid
+                rgba(255,255,255,0.04);
+        }
+        .chdr{
+            padding:13px 17px;
+            background:rgba(0,212,255,0.05);
+            border-bottom:1px solid
+                rgba(255,255,255,0.04);
+            display:flex;align-items:center;
+            gap:12px;
+        }
+        .cav{
+            width:34px;height:34px;
+            border-radius:50%;
+            background:linear-gradient(
+                135deg,var(--p),var(--s)
+            );
+            display:flex;align-items:center;
+            justify-content:center;font-size:15px;
+        }
+        .cnm{
+            font-size:12px;font-weight:700;
+            color:var(--tb);
+        }
+        .cst{
+            font-size:9px;color:#00ff9d;
+            letter-spacing:1px;
+        }
+        .cbdy{
+            padding:16px;
+            display:flex;flex-direction:column;
+            gap:11px;max-height:280px;
+            overflow-y:auto;
+        }
+        .cbdy::-webkit-scrollbar{display:none;}
+        .cm{
+            max-width:82%;
+            padding:10px 14px;
+            border-radius:11px;
+            font-size:12px;line-height:1.7;
+            animation:mi .3s ease;
+        }
+        @keyframes mi{
+            from{opacity:0;
+                transform:translateY(8px)
+                          scale(.97);}
+            to{opacity:1;
+               transform:translateY(0) scale(1);}
+        }
+        .cmu{
+            background:rgba(255,255,255,0.06);
+            align-self:flex-end;
+            border-bottom-right-radius:3px;
+        }
+        .cma{
+            background:linear-gradient(135deg,
+                rgba(0,212,255,0.08),
+                rgba(108,99,255,0.06)
+            );
+            border:1px solid rgba(0,212,255,.12);
+            align-self:flex-start;
+            border-bottom-left-radius:3px;
+        }
+        .cma-alert{
+            background:rgba(255,80,80,0.08);
+            border:1px solid rgba(255,80,80,0.2);
+            color:var(--t);max-width:100%;
+        }
+        .cma-success{
+            background:rgba(0,255,157,0.08);
+            border:1px solid rgba(0,255,157,0.2);
+            color:var(--t);max-width:100%;
+        }
+        .cmets{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:11px;margin-top:28px;
+        }
+        .cmet{
+            background:rgba(10,22,40,0.8);
+            border:1px solid
+                rgba(255,255,255,0.05);
+            border-radius:12px;padding:17px;
+            transition:all .3s;
+        }
+        .cmet:hover{
+            border-color:rgba(0,212,255,0.18);
+            background:rgba(0,212,255,0.04);
+        }
+        .cmv{
+            font-family:'Orbitron',sans-serif;
+            font-size:26px;font-weight:700;
+            color:var(--p);display:block;
+            margin-bottom:4px;
+        }
+        .cml{
+            font-size:9px;color:var(--td);
+            letter-spacing:2px;
+            text-transform:uppercase;
+        }
+
+        /* TESTIMONIALS */
+        #testimonials{
+            background:linear-gradient(180deg,
+                transparent,
+                rgba(13,31,60,0.3),
+                transparent
+            );
+            text-align:center;
+        }
+        #testimonials .stag{
+            justify-content:center;
+        }
+        #testimonials .stag::before{
+            display:none;
+        }
+        .tgrid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:18px;
+            max-width:1100px;
+            margin:64px auto 0;
+        }
+        .tcard{
+            background:var(--card);
+            border:1px solid
+                rgba(255,255,255,0.06);
+            border-radius:18px;
+            padding:36px 30px;
+            position:relative;text-align:left;
+            transition:all .4s
+                cubic-bezier(0.16,1,0.3,1);
+            box-shadow:var(--sh);
+        }
+        .tcard::before{
+            content:'';position:absolute;
+            top:0;left:20%;right:20%;height:1px;
+            background:linear-gradient(90deg,
+                transparent,var(--p),transparent
+            );
+            transform:scaleX(0);
+            transition:transform .4s;
+        }
+        .tcard:hover::before{
+            transform:scaleX(1);
+        }
+        .tcard:hover{
+            transform:translateY(-8px);
+            border-color:rgba(0,212,255,0.12);
+        }
+        .tquote{
+            font-size:36px;color:var(--p);
+            opacity:.3;line-height:1;
+            margin-bottom:16px;
+            font-family:Georgia,serif;
+        }
+        .ttext{
+            font-size:14px;color:var(--td);
+            line-height:1.8;margin-bottom:24px;
+            font-style:italic;
+        }
+        .tstars{
+            color:#ffd700;font-size:14px;
+            letter-spacing:2px;margin-bottom:20px;
+        }
+        .tauthor{
+            display:flex;align-items:center;
+            gap:14px;padding-top:18px;
+            border-top:1px solid
+                rgba(255,255,255,0.05);
+        }
+        .tavatar{
+            width:44px;height:44px;
+            border-radius:50%;
+            display:flex;align-items:center;
+            justify-content:center;font-size:18px;
+            border:2px solid var(--bdr);
+        }
+        .ta1{background:linear-gradient(135deg,
+            rgba(0,212,255,0.15),
+            rgba(108,99,255,0.15));}
+        .ta2{background:linear-gradient(135deg,
+            rgba(108,99,255,0.15),
+            rgba(0,102,255,0.15));}
+        .ta3{background:linear-gradient(135deg,
+            rgba(0,255,157,0.15),
+            rgba(0,212,255,0.15));}
+        .taname{
+            font-size:14px;font-weight:700;
+            color:var(--tb);
+        }
+        .tabiz{
+            font-size:11px;color:var(--td);
+            letter-spacing:1px;margin-top:2px;
+        }
+
+        /* FAQ */
+        #faq{text-align:center;}
+        #faq .stag{justify-content:center;}
+        #faq .stag::before{display:none;}
+        .fwrap{
+            max-width:720px;
+            margin:64px auto 0;text-align:left;
+        }
+        .fi{
+            border:1px solid
+                rgba(255,255,255,0.06);
+            border-radius:12px;
+            margin-bottom:10px;overflow:hidden;
+            background:var(--card);
+            transition:border-color .3s;
+        }
+        .fi:hover{
+            border-color:rgba(0,212,255,0.15);
+        }
+        .fi.open{
+            border-color:rgba(0,212,255,0.2);
+        }
+        .fq{
+            padding:20px 24px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;cursor:none;
+            font-size:14px;font-weight:600;
+            color:var(--tb);transition:color .3s;
+        }
+        .fi.open .fq{color:var(--p);}
+        .fi-icon{
+            width:28px;height:28px;
+            border-radius:50%;
+            border:1px solid var(--bdr);
+            display:flex;align-items:center;
+            justify-content:center;
+            font-size:16px;color:var(--p);
+            flex-shrink:0;transition:all .3s;
+        }
+        .fi.open .fi-icon{
+            background:rgba(0,212,255,0.1);
+            transform:rotate(45deg);
+        }
+        .fa{
+            max-height:0;overflow:hidden;
+            transition:max-height .4s
+                cubic-bezier(0.16,1,0.3,1),
+                padding .3s;
+            font-size:13px;color:var(--td);
+            line-height:1.8;
+        }
+        .fi.open .fa{
+            max-height:200px;
+            padding:0 24px 20px;
+        }
+
+        /* PRICING */
+        #pricing{text-align:center;}
+        #pricing .stag{justify-content:center;}
+        #pricing .stag::before{display:none;}
+        .pgr{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:18px;max-width:960px;
+            margin:70px auto 0;
+        }
+        .pc{
+            background:var(--card);
+            border:1px solid
+                rgba(255,255,255,0.06);
+            border-radius:20px;
+            padding:42px 28px;
+            position:relative;overflow:hidden;
+            transition:all .4s
+                cubic-bezier(0.16,1,0.3,1);
+            backdrop-filter:blur(10px);
+            box-shadow:var(--sh);
+        }
+        .pc::before{
+            content:'';position:absolute;
+            top:0;left:10%;right:10%;height:1px;
+            background:linear-gradient(90deg,
+                transparent,var(--p),transparent
+            );
+        }
+        .pc.pop{
+            border-color:rgba(0,212,255,0.2);
+            background:linear-gradient(145deg,
+                rgba(0,212,255,0.05),
+                rgba(108,99,255,0.04),
+                rgba(13,31,60,0.8)
+            );
+        }
+        .pc:hover{
+            transform:translateY(-10px);
+            border-color:rgba(0,212,255,0.2);
+        }
+        .ptag{
+            position:absolute;
+            top:17px;right:17px;
+            background:linear-gradient(
+                135deg,var(--p),var(--s)
+            );
+            color:var(--navy);
+            font-size:9px;font-weight:800;
+            letter-spacing:2px;
+            padding:4px 11px;
+            border-radius:100px;
+        }
+        .ptier{
+            font-size:10px;letter-spacing:4px;
+            text-transform:uppercase;
+            color:var(--td);margin-bottom:18px;
+        }
+        .pamt{
+            font-family:'Orbitron',sans-serif;
+            font-size:42px;font-weight:900;
+            color:var(--p);line-height:1;
+            margin-bottom:6px;
+        }
+        .pamt span{
+            font-size:14px;font-weight:400;
+            color:var(--td);
+        }
+        .pdesc{
+            font-size:13px;color:var(--td);
+            margin-bottom:30px;line-height:1.7;
+        }
+        .pfeats{
+            list-style:none;text-align:left;
+            margin-bottom:34px;
+        }
+        .pfeats li{
+            font-size:13px;color:var(--td);
+            padding:9px 0;
+            border-bottom:1px solid
+                rgba(255,255,255,0.04);
+            display:flex;gap:10px;
+            transition:color .2s;
+        }
+        .pfeats li:hover{color:var(--t);}
+        .ck{color:var(--a);font-size:11px;
+            flex-shrink:0;}
+
+        /* CONTACT */
+        #contact{
+            background:linear-gradient(180deg,
+                transparent,
+                rgba(13,31,60,0.3),transparent
+            );
+        }
+        .ctw{
+            max-width:1040px;margin:0 auto;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:72px;align-items:start;
+        }
+        .ctf{
+            display:flex;flex-direction:column;
+            gap:15px;
+        }
+        .fg{
+            display:flex;flex-direction:column;
+            gap:6px;position:relative;
+        }
+        .fg label{
+            font-size:10px;letter-spacing:3px;
+            text-transform:uppercase;
+            color:var(--td);
+        }
+        .fg input,.fg select,.fg textarea{
+            background:rgba(13,31,60,0.6);
+            border:1px solid
+                rgba(255,255,255,0.07);
+            border-radius:8px;
+            padding:13px 16px;color:var(--t);
+            font-family:'Space Grotesk',
+                         sans-serif;
+            font-size:14px;outline:none;
+            transition:all .3s;
+        }
+        .fg input:focus,
+        .fg select:focus,
+        .fg textarea:focus{
+            border-color:rgba(0,212,255,0.35);
+            background:rgba(0,212,255,0.03);
+            box-shadow:0 0 0 3px
+                rgba(0,212,255,0.06);
+        }
+        .fg.valid input,
+        .fg.valid select{
+            border-color:rgba(0,255,157,0.4);
+        }
+        .fg.error input,
+        .fg.error select{
+            border-color:rgba(255,80,80,0.5);
+        }
+        .fg .vtick{
+            position:absolute;
+            right:14px;top:36px;
+            font-size:14px;
+            opacity:0;transition:opacity .3s;
+        }
+        .fg.valid .vtick{opacity:1;color:var(--a);}
+        .fg.error .vtick{
+            opacity:1;color:#ff5050;
+        }
+        .fg select option{background:var(--mid);}
+        .fg textarea{
+            resize:vertical;min-height:100px;
+        }
+        .cti{padding-top:8px;}
+        .cii{
+            display:flex;align-items:flex-start;
+            gap:17px;padding:19px 0;
+            border-bottom:1px solid
+                rgba(255,255,255,0.04);
+            transition:padding-left .3s;
+        }
+        .cii:hover{padding-left:6px;}
+        .ciic{
+            width:42px;height:42px;
+            background:rgba(0,212,255,0.07);
+            border:1px solid rgba(0,212,255,.12);
+            border-radius:12px;
+            display:flex;align-items:center;
+            justify-content:center;
+            font-size:17px;flex-shrink:0;
+        }
+        .cil{
+            font-size:10px;letter-spacing:3px;
+            text-transform:uppercase;
+            color:var(--td);margin-bottom:4px;
+        }
+        .civ{
+            font-size:14px;font-weight:600;
+            color:var(--tb);
+        }
+
+        /* WHATSAPP FLOAT */
+        .waf{
+            position:fixed;
+            bottom:80px;right:24px;
+            z-index:9999;width:54px;height:54px;
+            background:linear-gradient(
+                135deg,#25D366,#128C7E
+            );
+            border-radius:50%;
+            display:flex;align-items:center;
+            justify-content:center;font-size:24px;
+            box-shadow:0 8px 28px
+                rgba(37,211,102,0.35);
+            cursor:none;transition:all .3s;
+            animation:wf 3s ease infinite;
+            text-decoration:none;
+        }
+        .waf:hover{transform:scale(1.1);}
+        .waf::before{
+            content:'';position:absolute;
+            inset:-6px;border-radius:50%;
+            background:rgba(37,211,102,0.18);
+            animation:wr 2.2s infinite;
+        }
+        .waf::after{
+            content:'Chat on WhatsApp';
+            position:absolute;right:64px;top:50%;
+            transform:translateY(-50%);
+            background:rgba(6,15,30,0.95);
+            border:1px solid var(--bdr);
+            color:var(--t);
+            font-family:'Space Grotesk',sans-serif;
+            font-size:11px;letter-spacing:1px;
+            padding:6px 12px;border-radius:6px;
+            white-space:nowrap;
+            opacity:0;transition:opacity .3s;
+            pointer-events:none;
+        }
+        .waf:hover::after{opacity:1;}
+        @keyframes wr{
+            0%{transform:scale(1);opacity:.6;}
+            100%{transform:scale(1.5);opacity:0;}
+        }
+        @keyframes wf{
+            0%,100%{transform:translateY(0);}
+            50%{transform:translateY(-6px);}
+        }
+
+        /* BACK TO TOP */
+        #btt{
+            position:fixed;
+            bottom:24px;right:24px;
+            z-index:9999;width:42px;height:42px;
+            background:rgba(13,31,60,0.9);
+            border:1px solid var(--bdr);
+            border-radius:10px;
+            display:flex;align-items:center;
+            justify-content:center;
+            color:var(--p);font-size:18px;
+            cursor:none;
+            opacity:0;visibility:hidden;
+            transition:all .3s;
+            backdrop-filter:blur(10px);
+        }
+        #btt.show{opacity:1;visibility:visible;}
+        #btt:hover{
+            background:rgba(0,212,255,0.1);
+            border-color:rgba(0,212,255,0.3);
+            transform:translateY(-3px);
+        }
+
+        /* FOOTER */
+        footer{
+            position:relative;z-index:1;
+            background:rgba(4,10,20,0.8);
+            backdrop-filter:blur(12px);
+            border-top:1px solid
+                rgba(255,255,255,0.05);
+        }
+        .ft-top{
+            padding:60px 60px 40px;
+            display:grid;
+            grid-template-columns:
+                2fr 1fr 1fr 1.5fr;
+            gap:40px;
+        }
+        .ft-brand .logo-main{
+            font-size:16px;
+            margin-bottom:6px;display:block;
+        }
+        .ft-brand .logo-sub{
+            display:block;margin-bottom:16px;
+        }
+        .ft-tagline{
+            font-size:13px;color:var(--td);
+            line-height:1.8;max-width:240px;
+        }
+        .ft-col h4{
+            font-family:'Orbitron',sans-serif;
+            font-size:10px;font-weight:700;
+            letter-spacing:3px;
+            text-transform:uppercase;
+            color:var(--p);margin-bottom:20px;
+        }
+        .ft-col ul{
+            list-style:none;
+            display:flex;flex-direction:column;
+            gap:10px;
+        }
+        .ft-col ul a{
+            font-size:13px;color:var(--td);
+            text-decoration:none;
+            transition:all .3s;
+            display:inline-block;
+        }
+        .ft-col ul a:hover{
+            color:var(--p);
+            transform:translateX(4px);
+        }
+        .ft-ci{
+            display:flex;align-items:center;
+            gap:10px;font-size:12px;
+            color:var(--td);margin-bottom:10px;
+        }
+        .ft-bottom{
+            padding:20px 60px;
+            border-top:1px solid
+                rgba(255,255,255,0.04);
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        .ft-copy{
+            font-size:11px;color:var(--td);
+        }
+        .ft-links{
+            display:flex;gap:20px;list-style:none;
+        }
+        .ft-links a{
+            font-size:11px;color:var(--td);
+            text-decoration:none;
+            transition:color .3s;
+        }
+        .ft-links a:hover{color:var(--p);}
+
+        /* COOKIE */
+        #cookie{
+            position:fixed;
+            bottom:0;left:0;right:0;
+            z-index:9997;
+            background:rgba(6,15,30,0.97);
+            border-top:1px solid var(--bdr);
+            padding:16px 40px;
+            display:flex;align-items:center;
+            justify-content:space-between;
+            gap:20px;flex-wrap:wrap;
+            backdrop-filter:blur(16px);
+            transition:transform .4s ease;
+        }
+        #cookie.gone{
+            transform:translateY(100%);
+        }
+        .ck-txt{
+            font-size:12px;color:var(--td);
+            line-height:1.6;max-width:600px;
+        }
+        .ck-txt a{color:var(--p);
+            text-decoration:none;}
+        .ck-btns{
+            display:flex;gap:10px;flex-shrink:0;
+        }
+        .ck-acc{
+            padding:8px 20px;
+            background:linear-gradient(
+                135deg,var(--p),var(--s)
+            );
+            color:white;border:none;
+            border-radius:6px;
+            font-family:'Space Grotesk',
+                         sans-serif;
+            font-size:11px;font-weight:700;
+            letter-spacing:1px;cursor:none;
+        }
+        .ck-dec{
+            padding:8px 16px;
+            background:transparent;
+            color:var(--td);
+            border:1px solid
+                rgba(255,255,255,0.1);
+            border-radius:6px;
+            font-family:'Space Grotesk',
+                         sans-serif;
+            font-size:11px;cursor:none;
+        }
+
+        /* EXIT POPUP */
+        #exitpop{
+            position:fixed;inset:0;
+            z-index:999999;
+            background:rgba(0,0,0,0.75);
+            backdrop-filter:blur(8px);
+            display:flex;align-items:center;
+            justify-content:center;
+            opacity:0;visibility:hidden;
+            transition:all .4s;
+        }
+        #exitpop.show{
+            opacity:1;visibility:visible;
+        }
+        .ep-box{
+            background:linear-gradient(145deg,
+                #0a1628,#0d1f3c
+            );
+            border:1px solid var(--bdr);
+            border-radius:24px;
+            padding:52px 48px;
+            max-width:480px;width:90%;
+            text-align:center;position:relative;
+            box-shadow:0 40px 100px
+                rgba(0,0,0,0.6),var(--gc);
+            animation:epIn .4s
+                cubic-bezier(0.16,1,0.3,1);
+        }
+        @keyframes epIn{
+            from{transform:scale(0.9)
+                translateY(20px);opacity:0;}
+            to{transform:scale(1)
+               translateY(0);opacity:1;}
+        }
+        .ep-close{
+            position:absolute;
+            top:16px;right:16px;
+            width:32px;height:32px;
+            border:1px solid var(--bdr);
+            border-radius:50%;
+            display:flex;align-items:center;
+            justify-content:center;
+            color:var(--td);font-size:16px;
+            cursor:none;transition:all .3s;
+        }
+        .ep-close:hover{
+            border-color:var(--p);color:var(--p);
+        }
+        .ep-icon{font-size:48px;margin-bottom:16px;}
+        .ep-title{
+            font-family:'Orbitron',sans-serif;
+            font-size:22px;font-weight:700;
+            color:var(--tb);margin-bottom:12px;
+        }
+        .ep-sub{
+            font-size:14px;color:var(--td);
+            line-height:1.7;margin-bottom:28px;
+        }
+        .ep-hl{color:var(--p);font-weight:600;}
+
+        /* ANIMATIONS */
+        @keyframes fu{
+            from{opacity:0;
+                transform:translateY(28px);}
+            to{opacity:1;transform:translateY(0);}
+        }
+        .rv{
+            opacity:0;
+            transform:translateY(36px);
+            transition:all .8s
+                cubic-bezier(0.16,1,0.3,1);
+        }
+        .rv.on{
+            opacity:1;transform:translateY(0);
+        }
+        .tilt{transform-style:preserve-3d;}
+
+        /* RESPONSIVE */
+        @media(max-width:1024px){
+            nav{padding:0 20px;}
+            .nav-links{display:none;}
+            .ham{display:flex;}
+            section{padding:80px 20px;}
+            .sgrid,.pgr,.tgrid{
+                grid-template-columns:1fr;
+                max-width:440px;margin:0 auto;
+            }
+            .pgrid{
+                grid-template-columns:repeat(2,1fr);
+                gap:30px;
+            }
+            .pline{display:none;}
+            .cw{
+                grid-template-columns:1fr;
+                gap:32px;
+                margin-bottom:60px;
+            }
+            .cw [style*="order:1"]{order:1!important;}
+            .cw [style*="order:2"]{order:2!important;}
+            .ctw{
+                grid-template-columns:1fr;
+                gap:32px;
+            }
+            .hst{flex-wrap:wrap;}
+            .stat{
+                min-width:50%;
+                border-bottom:1px solid
+                    rgba(255,255,255,0.05);
+            }
+            .trust-row{gap:10px;}
+            .tbadge{font-size:9px;}
+            .ft-top{
+                grid-template-columns:1fr 1fr;
+                padding:40px 20px 30px;
+            }
+            .ft-bottom{
+                flex-direction:column;
+                gap:12px;text-align:center;
+                padding:16px 20px;
+            }
+            #cookie{padding:16px 20px;}
+        }
+        @media(max-width:600px){
+            .ft-top{grid-template-columns:1fr;}
+            .tgrid{grid-template-columns:1fr;}
+            .ep-box{padding:36px 24px;}
+        }
+    </style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div id="spb"></div>
+
+<!-- Loader -->
+<div id="loader">
+    <div class="ll">VANTAGE NEURAL</div>
+    <div class="ls">Initializing Systems</div>
+    <div class="lb"><div class="lf"></div></div>
+</div>
+
+<!-- BG -->
+<div class="bg-base"></div>
+<div class="bg-rad"></div>
+<div class="bg-grid"></div>
+<canvas id="bgC"></canvas>
+
+<!-- Cursor -->
+<div id="cur"></div>
+<div id="cdot"></div>
+
+<!-- 
+    ================================
+    EDIT YOUR WHATSAPP NUMBER HERE
+    Replace [YOUR-WHATSAPP-NUMBER]
+    with your number like: 919876543210
+    (91 = India code, no + or spaces)
+    ================================
+-->
+<a href="https://wa.me/[YOUR-WHATSAPP-NUMBER]"
+   class="waf"
+   target="_blank">💬</a>
+
+<!-- Back to Top -->
+<button id="btt"
+        onclick="window.scrollTo(
+            {top:0,behavior:'smooth'})">
+    ↑
+</button>
+
+<!-- Cookie -->
+<div id="cookie">
+    <p class="ck-txt">
+        We use cookies to enhance your
+        experience and analyze website
+        traffic. By accepting, you agree
+        to our <a href="#">Privacy Policy</a>
+        and comply with India's DPDP Act 2023.
+    </p>
+    <div class="ck-btns">
+        <button class="ck-acc"
+                onclick="document
+                    .getElementById('cookie')
+                    .classList.add('gone')">
+            Accept
+        </button>
+        <button class="ck-dec"
+                onclick="document
+                    .getElementById('cookie')
+                    .classList.add('gone')">
+            Decline
+        </button>
+    </div>
+</div>
+
+<!-- Exit Popup -->
+<div id="exitpop">
+    <div class="ep-box">
+        <div class="ep-close"
+             onclick="closeExit()">✕</div>
+        <div class="ep-icon">🛡️</div>
+        <h3 class="ep-title">
+            Wait! Don't Leave Yet.
+        </h3>
+        <p class="ep-sub">
+            Your business currently has
+            <span class="ep-hl">
+                unresolved security gaps
+            </span>
+            and is losing leads every hour
+            it stays unautomated.<br><br>
+            Get your
+            <span class="ep-hl">
+                Free Digital Audit
+            </span>
+            before you go — it takes
+            less than 2 minutes.
+        </p>
+        <a href="#contact" class="bp"
+           onclick="closeExit()">
+            Get Free Audit Now →
+        </a>
+        <br>
+        <!-- EDIT NUMBER HERE TOO -->
+        <a href="https://wa.me/[YOUR-WHATSAPP-NUMBER]"
+           target="_blank"
+           style="display:inline-block;
+                  margin-top:12px;
+                  font-size:12px;
+                  color:var(--td);
+                  text-decoration:none;">
+            💬 Or Chat on WhatsApp
+        </a>
+    </div>
+</div>
+
+<!-- ======== NAVBAR ======== -->
+<nav id="nb">
+    <div class="logo">
+        <div class="logo-main">
+            VANTAGE NEURAL
+        </div>
+        <div class="logo-sub">
+            Global Systems
+        </div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#casestudy">Cases</a></li>
+        <li><a href="#testimonials">
+            Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li>
+            <a href="#contact"
+               class="nav-btn">
+                Free Audit
+            </a>
+        </li>
+    </ul>
+    <div class="ham" id="ham"
+         onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mobMenu">
+    <a href="#services"
+       onclick="closeMenu()">Services</a>
+    <a href="#process"
+       onclick="closeMenu()">Process</a>
+    <a href="#casestudy"
+       onclick="closeMenu()">Case Studies</a>
+    <a href="#testimonials"
+       onclick="closeMenu()">Reviews</a>
+    <a href="#faq"
+       onclick="closeMenu()">FAQ</a>
+    <a href="#pricing"
+       onclick="closeMenu()">Pricing</a>
+    <a href="#contact"
+       class="mob-cta"
+       onclick="closeMenu()">
+        Get Free Audit →
+    </a>
+</div>
+
+<!-- ======== HERO ======== -->
+<section id="hero">
+    <div class="hero-floor"></div>
+    <div class="hw">
+        <div class="hb">
+            <span class="hd"></span>
+            APAC Expansion 2024 —
+            India Division Active
+        </div>
+        <h1 class="ht">
+            <span class="ht1">
+                DEFEND. AUTOMATE.
+            </span>
+            <span class="ht2">DOMINATE.</span>
+        </h1>
+        <p class="hsub" id="twEl"></p>
+        <div class="hbtns">
+            <a href="#contact" class="bp">
+                Get Free Digital Audit
+            </a>
+            <a href="#casestudy" class="bs">
+                View Case Studies
+            </a>
+        </div>
+        <div class="trust-row">
+            <div class="tbadge">
+                <span>✓</span>
+                WhatsApp Business API
+            </div>
+            <div class="tbadge">
+                <span>🔒</span>
+                DPDP Act Compliant
+            </div>
+            <div class="tbadge">
+                <span>⚡</span>
+                100% Uptime SLA
+            </div>
+            <div class="tbadge">
+                <span>🛡️</span>
+                Purple Team Certified
+            </div>
+            <div class="tbadge">
+                <span>🌐</span>
+                Pan-India Coverage
+            </div>
+        </div>
+        <div class="hst">
+            <div class="stat">
+                <span class="sn"
+                      data-t="100">0</span>
+                <span class="sl">% Uptime</span>
+            </div>
+            <div class="stat">
+                <span class="sn"
+                      data-t="3">0</span>
+                <span class="sl">Sec Response</span>
+            </div>
+            <div class="stat">
+                <span class="sn"
+                      data-t="50">0</span>
+                <span class="sl">
+                    Businesses Secured
+                </span>
+            </div>
+            <div class="stat">
+                <span class="sn"
+                      data-t="24">0</span>
+                <span class="sl">
+                    /7 AI Operation
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======== SERVICES ======== -->
+<section id="services">
+    <div class="svc-hdr rv">
+        <span class="stag">What We Deploy</span>
+        <h2 class="stitle">
+            Two Systems.<br>Total Dominance.
+        </h2>
+        <p class="ssub" style="margin:0 auto;">
+            Every business needs Intelligent
+            Automation and Bulletproof Security
+            to dominate digitally.
+        </p>
+    </div>
+    <div class="sgrid">
+        <div class="sc ai tilt rv">
+            <div class="siw ia">🤖</div>
+            <h3 class="sn2">
+                Neural AI Assistant
+            </h3>
+            <p class="sd">
+                Personalized AI trained on your
+                business exclusively. Not a bot —
+                a digital replica of your best
+                employee, operating 24/7.
+            </p>
+            <ul class="sl2">
+                <li>24/7 Customer Handling</li>
+                <li>Hindi & English Support</li>
+                <li>Dynamic Intelligence</li>
+                <li>WhatsApp & Web Integration</li>
+                <li>Order & Booking Management</li>
+            </ul>
+            <span class="sp2">STARTING ₹999</span>
+        </div>
+        <div class="sc cy tilt rv">
+            <div class="siw ic">🛡️</div>
+            <h3 class="sn2">
+                Purple Shield Security
+            </h3>
+            <p class="sd">
+                Red Team attacks first to expose
+                vulnerabilities. Blue Team seals
+                every gap. Purple Team cycles
+                both — forever.
+            </p>
+            <ul class="sl2">
+                <li>Full Penetration Testing</li>
+                <li>Vulnerability Assessment</li>
+                <li>Data Leak Prevention</li>
+                <li>Employee Security Training</li>
+                <li>Monthly Security Reports</li>
+            </ul>
+            <span class="sp2">
+                STARTING ₹1,499
+            </span>
+        </div>
+        <div class="sc bu tilt rv">
+            <div class="siw ib">⚡</div>
+            <h3 class="sn2">
+                Digital Fortress Bundle
+            </h3>
+            <p class="sd">
+                Complete Neural AI combined with
+                Purple Team Security. The full
+                arsenal for market-dominating
+                businesses.
+            </p>
+            <ul class="sl2">
+                <li>Everything in AI Plan</li>
+                <li>Everything in Security</li>
+                <li>Priority Deployment</li>
+                <li>Dedicated Account Manager</li>
+                <li>Quarterly System Review</li>
+            </ul>
+            <span class="sp2">
+                STARTING ₹1,999
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- ======== PROCESS ======== -->
+<section id="process">
+    <span class="stag rv">How It Works</span>
+    <h2 class="stitle rv">
+        Audit to Deployment<br>In 48 Hours.
+    </h2>
+    <div class="pgrid">
+        <div class="pline"></div>
+        <div class="ps rv">
+            <div class="pn">01</div>
+            <h3 class="pt">Free Digital Audit</h3>
+            <p class="px">
+                We scan your entire digital
+                presence. Every leak, vulnerability
+                and missed revenue opportunity
+                exposed.
+            </p>
+        </div>
+        <div class="ps rv">
+            <div class="pn">02</div>
+            <h3 class="pt">Custom Strategy</h3>
+            <p class="px">
+                A tailored implementation plan
+                built for your specific business
+                size, sector and revenue goals.
+            </p>
+        </div>
+        <div class="ps rv">
+            <div class="pn">03</div>
+            <h3 class="pt">Deploy & Secure</h3>
+            <p class="px">
+                Neural AI goes live and Purple
+                Shield activates. Full deployment
+                within 48 hours of confirmation.
+            </p>
+        </div>
+        <div class="ps rv">
+            <div class="pn">04</div>
+            <h3 class="pt">Monitor & Scale</h3>
+            <p class="px">
+                Continuous monitoring,
+                optimization and reporting.
+                Your system grows smarter
+                every single week.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ======== CASE STUDIES ======== -->
+<section id="casestudy">
+    <!-- Header -->
+    <div class="cs-hdr rv">
+        <span class="stag">Case Studies</span>
+        <h2 class="stitle">
+            Real Businesses.<br>Real Results.
+        </h2>
+        <p class="ssub" style="margin:0 auto;">
+            From sweet shops to dental clinics
+            to B2B firms — Vantage Neural has
+            transformed businesses across
+            every sector in India.
+        </p>
+    </div>
+
+    <!-- CS 1: Ahuja & Sons -->
+    <div class="cw">
+        <div class="co rv">
+            <div class="cwin">
+                <div class="chdr">
+                    <div class="cav">🍬</div>
+                    <div>
+                        <div class="cnm">
+                            Ahuja & Sons Neural AI
+                        </div>
+                        <div class="cst">
+                            ● Active 24/7
+                        </div>
+                    </div>
+                </div>
+                <div class="cbdy" id="cd1">
+                    <div class="cm cmu">
+                        Do you have eggless cakes?
+                    </div>
+                    <div class="cm cma">
+                        Yes! 100% eggless for ALL
+                        cakes 🎂 Same taste, same
+                        texture. What are you
+                        celebrating?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rv">
+            <span class="stag">Case Study 01</span>
+            <h2 class="stitle">
+                Ahuja & Sons<br>Bakery
+            </h2>
+            <p class="ssub">
+                A mid-tier sweet shop in Delhi NCR
+                was losing customers daily to slow
+                response times and zero after-hours
+                support. Neural AI deployed in 8 hours.
+            </p>
+            <div class="tags">
+                <span class="tag tag-p">
+                    AI AUTOMATION
+                </span>
+                <span class="tag tag-a">
+                    SWEET SHOP
+                </span>
+                <span class="tag tag-s">
+                    DELHI NCR
+                </span>
+            </div>
+            <div class="cmets">
+                <div class="cmet">
+                    <span class="cmv">3s</span>
+                    <div class="cml">
+                        Avg Response
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">24/7</span>
+                    <div class="cml">
+                        Always Online
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">0</span>
+                    <div class="cml">
+                        Missed Leads
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">8h</span>
+                    <div class="cml">
+                        Deploy Time
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CS 2: Dental Clinic -->
+    <div class="cw">
+        <div class="rv" style="order:1">
+            <span class="stag">Case Study 02</span>
+            <h2 class="stitle">
+                Dr. Sharma's<br>Dental Clinic
+            </h2>
+            <p class="ssub">
+                A private dental clinic in Pune
+                was handling 50+ patient WhatsApp
+                queries manually. Critical patient
+                data was on an unsecured system.
+                Full AI + Purple Shield in 48 hours.
+            </p>
+            <div class="tags">
+                <span class="tag tag-p">
+                    AI AUTOMATION
+                </span>
+                <span class="tag tag-s">
+                    PURPLE SHIELD
+                </span>
+                <span class="tag tag-a">PUNE</span>
+            </div>
+            <div class="cmets">
+                <div class="cmet">
+                    <span class="cmv">50+</span>
+                    <div class="cml">
+                        Daily Queries
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">3</span>
+                    <div class="cml">
+                        Critical Gaps Fixed
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">48h</span>
+                    <div class="cml">
+                        Full Deployment
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">100%</span>
+                    <div class="cml">
+                        Data Secured
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="co rv" style="order:2">
+            <div class="cwin">
+                <div class="chdr">
+                    <div class="cav">🦷</div>
+                    <div>
+                        <div class="cnm">
+                            Dr. Sharma Neural AI
+                        </div>
+                        <div class="cst">
+                            ● Active 24/7
+                        </div>
+                    </div>
+                </div>
+                <div class="cbdy" id="cd2">
+                    <div class="cm cmu">
+                        I need a root canal
+                        appointment.
+                    </div>
+                    <div class="cm cma">
+                        Of course! 🦷 Dr. Sharma
+                        is available Tomorrow 11 AM
+                        and 3 PM. Which slot works?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CS 3: Coaching -->
+    <div class="cw">
+        <div class="co rv">
+            <div class="cwin">
+                <div class="chdr">
+                    <div class="cav">📚</div>
+                    <div>
+                        <div class="cnm">
+                            Evergreen Academy AI
+                        </div>
+                        <div class="cst">
+                            ● Active 24/7
+                        </div>
+                    </div>
+                </div>
+                <div class="cbdy" id="cd3">
+                    <div class="cm cmu">
+                        JEE batches starting soon?
+                    </div>
+                    <div class="cm cma">
+                        Yes! 🎯 Next JEE Advanced
+                        batch starts 15th January.
+                        Limited seats. Reserve one?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rv">
+            <span class="stag">Case Study 03</span>
+            <h2 class="stitle">
+                Evergreen<br>Coaching Institute
+            </h2>
+            <p class="ssub">
+                A JEE/NEET coaching institute in
+                Lucknow was receiving 200+ queries
+                daily. Staff overwhelmed, leads
+                lost after 8 PM. Neural AI now
+                handles everything autonomously.
+            </p>
+            <div class="tags">
+                <span class="tag tag-p">
+                    AI AUTOMATION
+                </span>
+                <span class="tag tag-a">
+                    EDUCATION
+                </span>
+                <span class="tag tag-s">
+                    LUCKNOW
+                </span>
+            </div>
+            <div class="cmets">
+                <div class="cmet">
+                    <span class="cmv">200+</span>
+                    <div class="cml">
+                        Daily Queries
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">0</span>
+                    <div class="cml">
+                        Missed Leads
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">24/7</span>
+                    <div class="cml">Availability</div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">40%</span>
+                    <div class="cml">
+                        More Enrollments
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CS 4: Restaurant -->
+    <div class="cw">
+        <div class="rv" style="order:1">
+            <span class="stag">Case Study 04</span>
+            <h2 class="stitle">
+                Spice Route<br>Restaurant
+            </h2>
+            <p class="ssub">
+                A premium restaurant in Bangalore
+                was losing table reservations after
+                hours. Their online ordering system
+                had critical security vulnerabilities
+                exposing customer payment data.
+            </p>
+            <div class="tags">
+                <span class="tag tag-p">
+                    AI AUTOMATION
+                </span>
+                <span class="tag tag-s">
+                    PURPLE SHIELD
+                </span>
+                <span class="tag tag-a">
+                    BANGALORE
+                </span>
+            </div>
+            <div class="cmets">
+                <div class="cmet">
+                    <span class="cmv">₹0</span>
+                    <div class="cml">
+                        Breach Cost
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">35%</span>
+                    <div class="cml">
+                        More Reservations
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">5s</span>
+                    <div class="cml">
+                        Booking Response
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">24h</span>
+                    <div class="cml">
+                        Security Deploy
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="co rv" style="order:2">
+            <div class="cwin">
+                <div class="chdr">
+                    <div class="cav">🍛</div>
+                    <div>
+                        <div class="cnm">
+                            Spice Route Neural AI
+                        </div>
+                        <div class="cst">
+                            ● Active 24/7
+                        </div>
+                    </div>
+                </div>
+                <div class="cbdy" id="cd4">
+                    <div class="cm cmu">
+                        Table for 8 this Saturday?
+                    </div>
+                    <div class="cm cma">
+                        Great choice! 🍛 Saturday
+                        8 PM for 8 guests available.
+                        Private dining area?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CS 5: Garments -->
+    <div class="cw">
+        <div class="co rv">
+            <div class="cwin">
+                <div class="chdr">
+                    <div class="cav">👗</div>
+                    <div>
+                        <div class="cnm">
+                            Prestige Garments AI
+                        </div>
+                        <div class="cst">
+                            ● Active 24/7
+                        </div>
+                    </div>
+                </div>
+                <div class="cbdy" id="cd5">
+                    <div class="cm cmu">
+                        Designer sarees under ₹5000?
+                    </div>
+                    <div class="cm cma">
+                        Yes! 👗 200+ designer sarees
+                        ₹2,500-₹5,000. Wedding,
+                        festive or casual?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rv">
+            <span class="stag">Case Study 05</span>
+            <h2 class="stitle">
+                Prestige<br>Garments
+            </h2>
+            <p class="ssub">
+                A boutique garment store in Karol
+                Bagh was missing hundreds of
+                after-hours catalog requests on
+                WhatsApp. Neural AI now handles
+                all product queries and drives
+                customers directly to purchase.
+            </p>
+            <div class="tags">
+                <span class="tag tag-p">
+                    AI AUTOMATION
+                </span>
+                <span class="tag tag-a">RETAIL</span>
+                <span class="tag tag-s">
+                    KAROL BAGH
+                </span>
+            </div>
+            <div class="cmets">
+                <div class="cmet">
+                    <span class="cmv">300+</span>
+                    <div class="cml">
+                        Monthly Queries
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">45%</span>
+                    <div class="cml">
+                        Sales Increase
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">5s</span>
+                    <div class="cml">
+                        Response Time
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">24/7</span>
+                    <div class="cml">
+                        Store Available
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CS 6: B2B Corporate -->
+    <div class="cw">
+        <div class="rv" style="order:1">
+            <span class="stag">Case Study 06</span>
+            <h2 class="stitle">
+                TechBridge<br>Solutions
+            </h2>
+            <p class="ssub">
+                A mid-sized B2B IT firm in Gurgaon
+                was handling enterprise client data
+                on a completely unsecured server.
+                One vulnerability scan revealed 7
+                critical entry points. Purple Shield
+                deployed a full overhaul in 72 hours.
+            </p>
+            <div class="tags">
+                <span class="tag tag-s">
+                    PURPLE SHIELD
+                </span>
+                <span class="tag tag-p">
+                    B2B CORPORATE
+                </span>
+                <span class="tag tag-a">GURGAON</span>
+            </div>
+            <div class="cmets">
+                <div class="cmet">
+                    <span class="cmv">7</span>
+                    <div class="cml">
+                        Critical Gaps Found
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">72h</span>
+                    <div class="cml">
+                        Full Overhaul
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">₹0</span>
+                    <div class="cml">
+                        Breach Cost Saved
+                    </div>
+                </div>
+                <div class="cmet">
+                    <span class="cmv">100%</span>
+                    <div class="cml">
+                        Compliance Met
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="co rv" style="order:2">
+            <div class="cwin">
+                <div class="chdr">
+                    <div class="cav">💼</div>
+                    <div>
+                        <div class="cnm">
+                            TechBridge Security
+                        </div>
+                        <div class="cst">
+                            ● Secured
+                        </div>
+                    </div>
+                </div>
+                <div class="cbdy" id="cd6">
+                    <div class="cm cma cma-alert">
+                        🔴 CRITICAL: SQL injection
+                        vulnerability on client portal.
+                    </div>
+                    <div class="cm cma cma-alert">
+                        🔴 CRITICAL: Employee
+                        credentials stored in plain
+                        text. Immediate action needed.
+                    </div>
+                    <div class="cm cma">
+                        🟡 WARNING: SSL certificate
+                        expires in 3 days. Auto-renewal
+                        initiated.
+                    </div>
+                    <div class="cm cma cma-success">
+                        ✅ RESOLVED: All 7 gaps patched.
+                        Purple Shield active. System
+                        fully secured. 🛡️
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======== TESTIMONIALS ======== -->
+<section id="testimonials">
+    <span class="stag rv">Client Reviews</span>
+    <h2 class="stitle rv">
+        What Our Partners Say.
+    </h2>
+    <p class="ssub rv" style="margin:0 auto;">
+        Real results from real businesses
+        across India who trusted Vantage Neural.
+    </p>
+    <div class="tgrid">
+        <div class="tcard rv">
+            <div class="tquote">"</div>
+            <p class="ttext">
+                We were losing 10-15 customers
+                every night after 9 PM. After
+                Vantage Neural deployed our AI,
+                we respond in 3 seconds around
+                the clock. Monthly orders went
+                up 30% in the first month.
+            </p>
+            <div class="tstars">★★★★★</div>
+            <div class="tauthor">
+                <div class="tavatar ta1">🍬</div>
+                <div>
+                    <div class="taname">
+                        Rajesh Ahuja
+                    </div>
+                    <div class="tabiz">
+                        Owner, Ahuja & Sons · Delhi
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tcard rv">
+            <div class="tquote">"</div>
+            <p class="ttext">
+                I never thought a small clinic
+                needed cyber security. Vantage
+                Neural found 3 critical gaps in
+                our patient data system and fixed
+                everything in 24 hours. Completely
+                professional team.
+            </p>
+            <div class="tstars">★★★★★</div>
+            <div class="tauthor">
+                <div class="tavatar ta2">🏥</div>
+                <div>
+                    <div class="taname">
+                        Dr. Priya Sharma
+                    </div>
+                    <div class="tabiz">
+                        Director, Sharma Diagnostics
+                        · Pune
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tcard rv">
+            <div class="tquote">"</div>
+            <p class="ttext">
+                The bundle deal was the best
+                investment for our coaching
+                institute. Our AI handles 200+
+                parent inquiries daily without
+                a single human agent. Worth
+                every rupee — and then some.
+            </p>
+            <div class="tstars">★★★★★</div>
+            <div class="tauthor">
+                <div class="tavatar ta3">📚</div>
+                <div>
+                    <div class="taname">
+                        Amit Verma
+                    </div>
+                    <div class="tabiz">
+                        Founder, Apex Coaching
+                        · Lucknow
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======== FAQ ======== -->
+<section id="faq">
+    <span class="stag rv">FAQ</span>
+    <h2 class="stitle rv">Questions Answered.</h2>
+    <p class="ssub rv" style="margin:0 auto;">
+        Everything you need to know
+        before we begin.
+    </p>
+    <div class="fwrap">
+        <div class="fi rv">
+            <div class="fq"
+                 onclick="toggleFaq(this)">
+                How long does setup take?
+                <div class="fi-icon">+</div>
+            </div>
+            <div class="fa">
+                Neural AI deploys within 4-8 hours
+                of receiving your business info.
+                Purple Shield audit takes 24 hours,
+                full hardening within 48 hours.
+                The Digital Fortress Bundle is
+                fully live within 72 hours.
+            </div>
+        </div>
+        <div class="fi rv">
+            <div class="fq"
+                 onclick="toggleFaq(this)">
+                Do I need technical knowledge?
+                <div class="fi-icon">+</div>
+            </div>
+            <div class="fa">
+                Zero technical knowledge required.
+                We handle everything — setup,
+                deployment and monitoring. You
+                share your business information
+                and we build the rest. We also
+                provide a simple dashboard you
+                can check anytime.
+            </div>
+        </div>
+        <div class="fi rv">
+            <div class="fq"
+                 onclick="toggleFaq(this)">
+                What if I want changes after
+                deployment?
+                <div class="fi-icon">+</div>
+            </div>
+            <div class="fa">
+                Your AI is fully customizable
+                after deployment. New products,
+                changed prices, updated policies —
+                we update the AI within 24 hours.
+                Minor changes are free. Major
+                rebuilds are charged at a minimal
+                maintenance rate.
+            </div>
+        </div>
+        <div class="fi rv">
+            <div class="fq"
+                 onclick="toggleFaq(this)">
+                Is my business data safe with you?
+                <div class="fi-icon">+</div>
+            </div>
+            <div class="fa">
+                Absolutely. We operate under
+                India's DPDP Act 2023 compliance.
+                Your business data is encrypted,
+                never shared with third parties
+                and stored on secure servers.
+                Our Purple Team specializes in
+                data protection — yours is in
+                the safest hands possible.
+            </div>
+        </div>
+        <div class="fi rv">
+            <div class="fq"
+                 onclick="toggleFaq(this)">
+                How is payment done?
+                <div class="fi-icon">+</div>
+            </div>
+            <div class="fa">
+                We accept Cash, UPI and Cheque
+                (for bulk/enterprise orders only).
+                Payment is collected AFTER we show
+                you a working demo of your system.
+                You pay for results — not promises.
+                No advance required for the audit.
+            </div>
+        </div>
+        <div class="fi rv">
+            <div class="fq"
+                 onclick="toggleFaq(this)">
+                How is this different from a
+                regular chatbot?
+                <div class="fi-icon">+</div>
+            </div>
+            <div class="fa">
+                A regular chatbot gives pre-fixed
+                button answers. Our Neural AI
+                understands context, reads the
+                customer's actual question and
+                generates a personalized response —
+                like a human would. It learns your
+                entire business catalog and handles
+                complex multi-step conversations
+                that no basic chatbot can match.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======== PRICING ======== -->
+<section id="pricing">
+    <span class="stag rv">Investment</span>
+    <h2 class="stitle rv">
+        Transparent Pricing.<br>Zero Surprises.
+    </h2>
+    <p class="ssub rv"
+       style="margin:14px auto 0;">
+        Pricing scales with your business.
+        Every rupee invested returns tenfold
+        in efficiency and growth.
+    </p>
+    <div class="pgr">
+        <div class="pc rv">
+            <p class="ptier">Starter</p>
+            <div class="pamt">
+                ₹999<span>/one-time</span>
+            </div>
+            <p class="pdesc">
+                For small businesses ready to
+                automate their first digital
+                touchpoint.
+            </p>
+            <ul class="pfeats">
+                <li>
+                    <span class="ck">✓</span>
+                    Neural AI Assistant
+                </li>
+                <li>
+                    <span class="ck">✓</span>
+                    WhatsApp Integration
+                </li>
+                <li>
+                    <span class="ck">✓</span>
+                    Basic Security Audit
+                </li>
+                <li>
+                    <span class="ck">✓</span>
+                    Hindi & English Support
+                </li>
+                <li>
+                    <span class="ck">✓</span>
+                    48hr Deployment
+                </li>
+            </ul>
+            <a href="#contact" class="bs"
+               style="display:block;
+                      text-align:center;">
+                Get Started
+            </a>
+        </div>
+        <div class="pc pop rv">
+            <span class="ptag">MOST POPULAR</span>
+            <p class="ptier">Professional</p>
+            <div class="pamt">
+                ₹6,999<span>/one-time</span>
+            </div>
+            <p class="pdesc">
+                For growing businesses needing
+                AI automation and enterprise
+                security.
+            </p>
+            <ul class="pfeats">
+                <li>
+                    <span class="ck">✓</span>
+                    Full Neural AI System
+                </li>
+                <li>
+                    <span class="ck">✓</span>
+                    Purple Shield Security
+                </li>
+                <li>
+                    <span class="ck">✓</span>
+                    Penetration Testing
+                </li>
+                <li>
+                    <span class="ck">✓</span>
+                    CRM Integration
+                </li>
+                <li>
+                    <span class="ck">✓</span>
+                    Monthly Reports
+                </li>
+            </ul>
+            <a href="#contact" class="bp"
+               style="display:block;
+                      text-align:center;">
+                Get Started
+            </a>
+        </div>
+        <div class="pc rv">
+            <p class="ptier">Enterprise</p>
+            <div class="pamt">
+                Custom<span>/quote</span>
+            </div>
+            <p class="pdesc">
+                For high-revenue businesses
+                requiring dedicated enterprise
+                implementation.
+            </p>
+            <ul class="pfeats">
+                <li>
+                    <span class="ck">✓</span>
+                    Everything in Pro
+                </li>
+                <li>
+                    <span class="ck">✓</span>
+                    Dedicated AI Model
+                </li>
+                <li>
+                    <span class="ck">✓</span>
+                    Full Team Training
+                </li>
+                <li>
+                    <span class="ck">✓</span>
+                    Priority Support
+                </li>
+                <li>
+                    <span class="ck">✓</span>
+                    Quarterly Audit
+                </li>
+            </ul>
+            <a href="#contact" class="bs"
+               style="display:block;
+                      text-align:center;">
+                Contact Us
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ======== CONTACT ======== -->
+<section id="contact">
+    <div class="ctw">
+        <div>
+            <span class="stag rv">
+                Get In Touch
+            </span>
+            <h2 class="stitle rv">
+                Ready to Dominate<br>Your Market?
+            </h2>
+            <p class="ssub rv">
+                Book your Free Digital Audit.
+                We identify exactly where your
+                business leaks revenue and
+                seal it permanently.
+            </p>
+            <div class="cti rv">
+                <div class="cii">
+                    <div class="ciic">🌐</div>
+                    <div>
+                        <div class="cil">Coverage</div>
+                        <div class="civ">
+                            Pan-India | APAC Region
+                        </div>
+                    </div>
+                </div>
+                <div class="cii">
+                    <div class="ciic">⚡</div>
+                    <div>
+                        <div class="cil">
+                            Response Time
+                        </div>
+                        <div class="civ">
+                            Within 2 Hours
+                        </div>
+                    </div>
+                </div>
+                <!-- 
+                    EDIT YOUR WHATSAPP 
+                    NUMBER IN THE TEXT BELOW
+                -->
+                <div class="cii">
+                    <div class="ciic">💬</div>
+                    <div>
+                        <div class="cil">WhatsApp</div>
+                        <div class="civ">
+                            +91 [YOUR-WHATSAPP-NUMBER]
+                        </div>
+                    </div>
+                </div>
+                <div class="cii">
+                    <div class="ciic">💳</div>
+                    <div>
+                        <div class="cil">Payment</div>
+                        <div class="civ">
+                            Cash / UPI / Cheque (Bulk)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form class="ctf rv"
+              onsubmit="onSub(event)"
+              novalidate>
+            <div class="fg" id="fg-biz">
+                <label>Business Name</label>
+                <input type="text" id="f-biz"
+                       placeholder=
+                       "Your Business Name"
+                       required>
+                <span class="vtick">✓</span>
+            </div>
+            <div class="fg" id="fg-name">
+                <label>Your Name</label>
+                <input type="text" id="f-name"
+                       placeholder=
+                       "Owner / Manager Name"
+                       required>
+                <span class="vtick">✓</span>
+            </div>
+            <div class="fg" id="fg-phone">
+                <label>WhatsApp Number</label>
+                <input type="tel" id="f-phone"
+                       placeholder=
+                       "+91 XXXXX XXXXX"
+                       required>
+                <span class="vtick">✓</span>
+            </div>
+            <div class="fg" id="fg-rev">
+                <label>
+                    Monthly Revenue Range
+                </label>
+                <select id="f-rev" required>
+                    <option value=""
+                            disabled selected>
+                        Select Range
+                    </option>
+                    <option>₹10,000 - ₹15,000</option>
+                    <option>₹20,000 - ₹40,000</option>
+                    <option>₹1,00,000+</option>
+                </select>
+                <span class="vtick">✓</span>
+            </div>
+            <div class="fg" id="fg-svc">
+                <label>Service Required</label>
+                <select id="f-svc" required>
+                    <option value=""
+                            disabled selected>
+                        Select Service
+                    </option>
+                    <option>Neural AI Assistant</option>
+                    <option>
+                        Purple Shield Security
+                    </option>
+                    <option>
+                        Digital Fortress Bundle
+                    </option>
+                </select>
+                <span class="vtick">✓</span>
+            </div>
+            <div class="fg">
+                <label>About Your Business</label>
+                <textarea
+                    placeholder=
+                    "Brief description and 
+main challenges...">
+                </textarea>
+            </div>
+            <button type="submit" class="bp"
+                    id="subBtn"
+                    style="cursor:none;
+                           width:100%;">
+                Book Free Audit →
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- ======== FOOTER ======== -->
+<footer>
+    <div class="ft-top">
+        <div class="ft-brand">
+            <span class="logo-main">
+                VANTAGE NEURAL
+            </span>
+            <span class="logo-sub">
+                Global Systems
+            </span>
+            <p class="ft-tagline">
+                Military-grade AI Automation
+                and Purple Team Cyber Security
+                for businesses ready to operate
+                at a global standard.
+            </p>
+        </div>
+        <div class="ft-col">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="#services">
+                    Neural AI Assistant</a></li>
+                <li><a href="#services">
+                    Purple Shield Security</a></li>
+                <li><a href="#services">
+                    Digital Fortress Bundle</a></li>
+                <li><a href="#casestudy">
+                    Case Studies</a></li>
+            </ul>
+        </div>
+        <div class="ft-col">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#process">
+                    How It Works</a></li>
+                <li><a href="#testimonials">
+                    Reviews</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#pricing">
+                    Pricing</a></li>
+            </ul>
+        </div>
+        <div class="ft-col">
+            <h4>Contact</h4>
+            <!-- EDIT NUMBER HERE -->
+            <div class="ft-ci">
+                <span>💬</span>
+                +91 [YOUR-WHATSAPP-NUMBER]
+            </div>
+            <div class="ft-ci">
+                <span>📧</span>
+                contact@vantage-neural.com
+            </div>
+            <div class="ft-ci">
+                <span>🌐</span>
+                Pan-India | APAC Region
+            </div>
+            <div class="ft-ci">
+                <span>⏱️</span>
+                Response within 2 hours
+            </div>
+        </div>
+    </div>
+    <div class="ft-bottom">
+        <p class="ft-copy">
+            © 2024 Vantage Neural Global Systems.
+            All Rights Reserved.
+            DPDP Act 2023 Compliant.
+        </p>
+        <ul class="ft-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script>
+/* ============================
+   NUMBER CONFIGURATION
+   Replace [YOUR-WHATSAPP-NUMBER]
+   with your number
+   Example: 919876543210
+   (91 = India code, no + or spaces)
+============================*/
+const WA_NUMBER = '[YOUR-WHATSAPP-NUMBER]';
+
+/* Update WhatsApp links */
+document.querySelectorAll(
+    'a[href*="wa.me"]'
+).forEach(a => {
+    a.href = 'https://wa.me/' + WA_NUMBER;
+});
+
+/* ============================
+   LOADER
+============================ */
+window.addEventListener('load',()=>{
+    setTimeout(()=>{
+        document.getElementById('loader')
+                .classList.add('gone');
+    },2400);
+});
+
+/* ============================
+   SCROLL: PROGRESS + BTT + NAV
+============================ */
+window.addEventListener('scroll',()=>{
+    const s=document.documentElement;
+    const p=(s.scrollTop/
+        (s.scrollHeight-s.clientHeight))*100;
+    document.getElementById('spb')
+            .style.width=p+'%';
+    document.getElementById('btt')
+            .classList
+            .toggle('show',window.scrollY>300);
+    document.getElementById('nb')
+            .classList
+            .toggle('scrolled',window.scrollY>60);
+});
+
+/* ============================
+   HAMBURGER MENU
+============================ */
+function toggleMenu(){
+    document.getElementById('ham')
+            .classList.toggle('open');
+    document.getElementById('mobMenu')
+            .classList.toggle('open');
+}
+function closeMenu(){
+    document.getElementById('ham')
+            .classList.remove('open');
+    document.getElementById('mobMenu')
+            .classList.remove('open');
+}
+
+/* ============================
+   EXIT INTENT POPUP
+============================ */
+let exitShown=false;
+document.addEventListener('mouseleave',e=>{
+    if(e.clientY<=0&&!exitShown){
+        exitShown=true;
+        document.getElementById('exitpop')
+                .classList.add('show');
+    }
+});
+function closeExit(){
+    document.getElementById('exitpop')
+            .classList.remove('show');
+}
+
+/* ============================
+   FAQ ACCORDION
+============================ */
+function toggleFaq(el){
+    const item=el.parentElement;
+    const isOpen=item.classList
+                     .contains('open');
+    document.querySelectorAll('.fi')
+            .forEach(f=>
+                f.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+}
+
+/* ============================
+   THREE.JS 3D BACKGROUND
+============================ */
+(function(){
+    const scene=new THREE.Scene();
+    const W=window.innerWidth;
+    const H=window.innerHeight;
+    const cam=new THREE.PerspectiveCamera(
+        55,W/H,0.1,200);
+    cam.position.set(0,0,22);
+    const ren=new THREE.WebGLRenderer({
+        canvas:document.getElementById('bgC'),
+        antialias:true,alpha:true
+    });
+    ren.setSize(W,H);
+    ren.setPixelRatio(
+        Math.min(devicePixelRatio,2));
+    ren.setClearColor(0x000000,0);
+
+    const CP=0x00d4ff,CS=0x6c63ff,
+          CA=0x00ff9d,CB=0x0066ff;
+
+    /* Neural Nodes */
+    const nms=[];
+    for(let i=0;i<18;i++){
+        const r=0.1+Math.random()*0.15;
+        const m=new THREE.Mesh(
+            new THREE.SphereGeometry(r,8,8),
+            new THREE.MeshBasicMaterial({
+                color:Math.random()>.5?CP:CS,
+                transparent:true,opacity:.5
+            })
+        );
+        m.position.set(
+            (Math.random()-.5)*28,
+            (Math.random()-.5)*18,
+            (Math.random()-.5)*8-4
+        );
+        m.userData={
+            bp:m.position.clone(),
+            sp:Math.random()*.4+.2,
+            ph:Math.random()*Math.PI*2
+        };
+        scene.add(m);
+        nms.push(m);
+    }
+
+    const lg=new THREE.Group();
+    scene.add(lg);
+    function rebuildLines(){
+        while(lg.children.length)
+            lg.remove(lg.children[0]);
+        for(let i=0;i<nms.length;i++){
+            for(let j=i+1;j<nms.length;j++){
+                const d=nms[i].position
+                    .distanceTo(nms[j].position);
+                if(d<9){
+                    const g=
+                        new THREE.BufferGeometry()
+                        .setFromPoints([
+                            nms[i].position.clone(),
+                            nms[j].position.clone()
+                        ]);
+                    lg.add(new THREE.Line(g,
+                        new THREE.LineBasicMaterial({
+                            color:0x00d4ff,
+                            transparent:true,
+                            opacity:(1-d/9)*.12
+                        })
+                    ));
+                }
+            }
+        }
+    }
+
+    /* Shields */
+    const sg=new THREE.Group();
+    scene.add(sg);
+    [[1.4,CS,-9,4,-3],
+     [1.0,CP,11,-3,-5],
+     [0.8,CA,-4,-6,-6]
+    ].forEach(([s,c,x,y,z])=>{
+        const sh=new THREE.Shape();
+        sh.moveTo(0,s);
+        sh.bezierCurveTo(s,s,s,0,s,-s*.3);
+        sh.bezierCurveTo(s,-s,0,-s*1.4,0,-s*1.4);
+        sh.bezierCurveTo(-s,-s*1.4,-s,-s,-s,-s*.3);
+        sh.bezierCurveTo(-s,0,-s,s,0,s);
+        const m=new THREE.Mesh(
+            new THREE.ShapeGeometry(sh,8),
+            new THREE.MeshBasicMaterial({
+                color:c,transparent:true,
+                opacity:.07,
+                side:THREE.DoubleSide,
+                wireframe:true
+            })
+        );
+        m.position.set(x,y,z);
+        m.userData={
+            rx:(Math.random()-.5)*.003,
+            ry:(Math.random()-.5)*.004,
+            fs:Math.random()*.5+.3,
+            fp:Math.random()*Math.PI*2,
+            by:y
+        };
+        sg.add(m);
+    });
+
+    /* Rings */
+    const rg=new THREE.Group();
+    scene.add(rg);
+    [[3.5,.04,CP,8,5,-8],
+     [2.2,.03,CS,-10,-4,-6],
+     [4.5,.03,CB,2,-8,-10],
+     [1.8,.04,CA,-6,6,-5]
+    ].forEach(([r,t,c,x,y,z])=>{
+        const m=new THREE.Mesh(
+            new THREE.TorusGeometry(r,t,6,48),
+            new THREE.MeshBasicMaterial({
+                color:c,transparent:true,
+                opacity:.18
+            })
+        );
+        m.position.set(x,y,z);
+        m.rotation.x=Math.random()*Math.PI;
+        m.rotation.y=Math.random()*Math.PI;
+        m.userData={
+            rx:(Math.random()-.5)*.005,
+            ry:(Math.random()-.5)*.004,
+            rz:(Math.random()-.5)*.003
+        };
+        rg.add(m);
+    });
+
+    /* Cubes */
+    const cg=new THREE.Group();
+    scene.add(cg);
+    for(let i=0;i<8;i++){
+        const s=.3+Math.random()*.5;
+        const m=new THREE.Mesh(
+            new THREE.BoxGeometry(s,s,s),
+            new THREE.MeshBasicMaterial({
+                color:[CP,CS,CB,CA][
+                    Math.floor(Math.random()*4)],
+                wireframe:true,transparent:true,
+                opacity:.16
+            })
+        );
+        m.position.set(
+            (Math.random()-.5)*24,
+            (Math.random()-.5)*16,
+            (Math.random()-.5)*6-3
+        );
+        m.userData={
+            rx:(Math.random()-.5)*.008,
+            ry:(Math.random()-.5)*.006,
+            fs:Math.random()*.6+.2,
+            fp:Math.random()*Math.PI*2,
+            by:m.position.y
+        };
+        cg.add(m);
+    }
+
+    /* Lock */
+    const lkg=new THREE.Group();
+    lkg.add(new THREE.Mesh(
+        new THREE.BoxGeometry(1.4,1.2,.3),
+        new THREE.MeshBasicMaterial({
+            color:CS,wireframe:true,
+            transparent:true,opacity:.2
+        })
+    ));
+    const la=new THREE.Mesh(
+        new THREE.TorusGeometry(
+            .45,.08,6,16,Math.PI),
+        new THREE.MeshBasicMaterial({
+            color:CS,wireframe:true,
+            transparent:true,opacity:.2
+        })
+    );
+    la.position.set(0,.35,0);
+    lkg.add(la);
+    lkg.position.set(6,-6,-4);
+    lkg.userData={ry:.006,fs:.4,fp:1.2,by:-6};
+    scene.add(lkg);
+
+    /* Hexagons */
+    const hg=new THREE.Group();
+    scene.add(hg);
+    [[1.4,-13,2,-8,CP],[.9,12,6,-6,CS],
+     [1.1,-5,-8,-7,CB],[.7,10,-7,-5,CA]
+    ].forEach(([r,x,y,z,c])=>{
+        const pts=[];
+        for(let i=0;i<7;i++){
+            const a=(Math.PI/3)*i-Math.PI/6;
+            pts.push(new THREE.Vector3(
+                Math.cos(a)*r,Math.sin(a)*r,0));
+        }
+        const line=new THREE.LineLoop(
+            new THREE.BufferGeometry()
+                .setFromPoints(pts),
+            new THREE.LineBasicMaterial({
+                color:c,transparent:true,
+                opacity:.16
+            })
+        );
+        line.position.set(x,y,z);
+        line.userData={
+            rx:(Math.random()-.5)*.004,
+            ry:(Math.random()-.5)*.005,
+            fs:Math.random()*.5+.2,
+            fp:Math.random()*Math.PI*2,
+            by:y
+        };
+        hg.add(line);
+    });
+
+    let mX=0,mY=0;
+    document.addEventListener('mousemove',e=>{
+        mX=(e.clientX/window.innerWidth-.5)*.6;
+        mY=(e.clientY/window.innerHeight-.5)*.4;
+    });
+
+    const clk=new THREE.Clock();
+    let lrt=0;
+
+    function animate(){
+        requestAnimationFrame(animate);
+        const t=clk.getElapsedTime();
+        lrt+=.016;
+        nms.forEach(m=>{
+            m.position.y=m.userData.bp.y+
+                Math.sin(t*m.userData.sp+
+                         m.userData.ph)*.4;
+        });
+        if(lrt>.5){lrt=0;rebuildLines();}
+        sg.children.forEach(s=>{
+            const u=s.userData;
+            s.rotation.x+=u.rx;
+            s.rotation.y+=u.ry;
+            s.position.y=u.by+
+                Math.sin(t*u.fs+u.fp)*.5;
+        });
+        rg.children.forEach(r=>{
+            r.rotation.x+=r.userData.rx;
+            r.rotation.y+=r.userData.ry;
+            r.rotation.z+=r.userData.rz;
+        });
+        cg.children.forEach(c=>{
+            const u=c.userData;
+            c.rotation.x+=u.rx;
+            c.rotation.y+=u.ry;
+            c.position.y=u.by+
+                Math.sin(t*u.fs+u.fp)*.35;
+        });
+        lkg.rotation.y+=lkg.userData.ry;
+        lkg.position.y=lkg.userData.by+
+            Math.sin(t*lkg.userData.fs+
+                     lkg.userData.fp)*.4;
+        hg.children.forEach(h=>{
+            const u=h.userData;
+            h.rotation.x+=u.rx;
+            h.rotation.y+=u.ry;
+            h.position.y=u.by+
+                Math.sin(t*u.fs+u.fp)*.4;
+        });
+        cam.position.x+=
+            (mX*2-cam.position.x)*.02;
+        cam.position.y+=
+            (-mY*1.5-cam.position.y)*.02;
+        cam.lookAt(0,0,0);
+        ren.render(scene,cam);
+    }
+    animate();
+
+    window.addEventListener('resize',()=>{
+        const W=window.innerWidth;
+        const H=window.innerHeight;
+        cam.aspect=W/H;
+        cam.updateProjectionMatrix();
+        ren.setSize(W,H);
+    });
+})();
+
+/* ============================
+   CURSOR
+============================ */
+const cur=document.getElementById('cur');
+const cdot=document.getElementById('cdot');
+let mx=0,my=0,dx=0,dy=0;
+document.addEventListener('mousemove',e=>{
+    mx=e.clientX;my=e.clientY;
+    cur.style.left=mx-11+'px';
+    cur.style.top=my-11+'px';
+});
+(function td(){
+    dx+=(mx-dx)*.12;dy+=(my-dy)*.12;
+    cdot.style.left=dx-2.5+'px';
+    cdot.style.top=dy-2.5+'px';
+    requestAnimationFrame(td);
+})();
+document.querySelectorAll(
+    'a,button,.sc,.pc,.ps,.cmet,.stat,'+
+    '.cii,.fi,.tcard,.cw'
+).forEach(el=>{
+    el.addEventListener('mouseenter',()=>
+        cur.classList.add('big'));
+    el.addEventListener('mouseleave',()=>
+        cur.classList.remove('big'));
+});
+
+/* ============================
+   TYPEWRITER
+============================ */
+const twEl=document.getElementById('twEl');
+const txts=[
+    "Vantage Neural deploys Military-Grade Purple Team Security and Personalized Neural AI for businesses ready to operate at a global standard.",
+    "Stop losing revenue to slow responses and vulnerabilities. We automate and protect — so you dominate.",
+    "Your competitors are already moving to AI. Don't be the last one standing still."
+];
+let ti=0,ci=0,dl=false;
+twEl.innerHTML='<span class="twc"></span>';
+function tw(){
+    const txt=txts[ti];
+    const c=twEl.querySelector('.twc');
+    if(!dl){
+        twEl.textContent=txt.substring(0,ci);
+        twEl.appendChild(c);ci++;
+        if(ci>txt.length){
+            dl=true;setTimeout(tw,2600);return;
+        }
+    }else{
+        twEl.textContent=txt.substring(0,ci);
+        twEl.appendChild(c);ci--;
+        if(ci<0){
+            dl=false;ti=(ti+1)%txts.length;
+            setTimeout(tw,500);return;
+        }
+    }
+    setTimeout(tw,dl?18:30);
+}
+setTimeout(tw,1600);
+
+/* ============================
+   SCROLL REVEAL
+============================ */
+document.querySelectorAll('.rv').forEach(el=>{
+    new IntersectionObserver(entries=>{
+        if(entries[0].isIntersecting)
+            entries[0].target.classList.add('on');
+    },{threshold:.07}).observe(el);
+});
+
+/* ============================
+   COUNTER
+============================ */
+let cDone=false;
+new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting&&!cDone){
+        cDone=true;
+        document.querySelectorAll('[data-t]')
+                .forEach(el=>{
+            const tgt=parseInt(el.dataset.t);
+            let c=0;const step=tgt/50;
+            setTimeout(()=>{
+                const iv=setInterval(()=>{
+                    c+=step;
+                    if(c>=tgt){
+                        c=tgt;clearInterval(iv);
+                    }
+                    el.textContent=Math.floor(c);
+                },35);
+            },900);
+        });
+    }
+},{threshold:.3}).observe(
+    document.getElementById('hero'));
+
+/* ============================
+   3D CARD TILT
+============================ */
+document.querySelectorAll('.tilt')
+        .forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+        const r=card.getBoundingClientRect();
+        const rX=((e.clientY-r.top-r.height/2)
+                   /r.height)*-7;
+        const rY=((e.clientX-r.left-r.width/2)
+                   /r.width)*7;
+        card.style.transform=
+            `perspective(1000px) `+
+            `rotateX(${rX}deg) `+
+            `rotateY(${rY}deg) `+
+            `translateZ(16px) translateY(-10px)`;
+        card.style.transition='transform .08s';
+    });
+    card.addEventListener('mouseleave',()=>{
+        card.style.transform='';
+        card.style.transition=
+            'transform .6s '+
+            'cubic-bezier(0.16,1,0.3,1)';
+    });
+});
+
+/* ============================
+   REAL-TIME FORM VALIDATION
+============================ */
+function vField(inputId,groupId,fn){
+    const inp=document.getElementById(inputId);
+    const grp=document.getElementById(groupId);
+    if(!inp||!grp)return;
+    inp.addEventListener('input',()=>{
+        const tick=grp.querySelector('.vtick');
+        if(fn(inp.value)){
+            grp.classList.add('valid');
+            grp.classList.remove('error');
+            if(tick)tick.textContent='✓';
+        }else if(inp.value.length>0){
+            grp.classList.add('error');
+            grp.classList.remove('valid');
+            if(tick)tick.textContent='✗';
+        }else{
+            grp.classList.remove('valid','error');
+        }
+    });
+}
+function vSelect(selId,groupId){
+    const sel=document.getElementById(selId);
+    const grp=document.getElementById(groupId);
+    if(!sel||!grp)return;
+    sel.addEventListener('change',()=>{
+        if(sel.value){
+            grp.classList.add('valid');
+            grp.classList.remove('error');
+            const tick=grp.querySelector('.vtick');
+            if(tick)tick.textContent='✓';
+        }
+    });
+}
+vField('f-biz','fg-biz',v=>v.trim().length>2);
+vField('f-name','fg-name',v=>v.trim().length>2);
+vField('f-phone','fg-phone',
+    v=>/^[\+]?[\d\s\-]{10,}$/.test(v));
+vSelect('f-rev','fg-rev');
+vSelect('f-svc','fg-svc');
+
+/* ============================
+   FORM SUBMIT
+============================ */
+function onSub(e){
+    e.preventDefault();
+    const btn=document.getElementById('subBtn');
+    btn.textContent='Audit Booked! ✓';
+    btn.style.background=
+        'linear-gradient(135deg,'+
+        '#00ff9d,#00cc7a)';
+    btn.style.boxShadow=
+        '0 8px 28px rgba(0,255,157,.3)';
+    setTimeout(()=>{
+        btn.textContent='Book Free Audit →';
+        btn.style.background='';
+        btn.style.boxShadow='';
+        e.target.reset();
+        document.querySelectorAll('.fg')
+                .forEach(g=>g.classList
+                    .remove('valid','error'));
+    },3000);
+}
+
+/* ============================
+   LIVE CHAT DEMOS
+============================ */
+function runChat(id,msgs,delay){
+    const el=document.getElementById(id);
+    if(!el)return;
+    let i=0;
+    function add(){
+        if(i>=msgs.length){
+            setTimeout(()=>{
+                i=0;el.innerHTML='';add();
+            },3000);return;
+        }
+        const msg=msgs[i];
+        const div=document.createElement('div');
+        div.className=
+            'cm '+(msg.t==='u'?'cmu':'cma')+
+            (msg.cls?' '+msg.cls:'');
+        div.textContent=msg.m;
+        el.appendChild(div);
+        el.scrollTop=el.scrollHeight;
+        i++;
+        setTimeout(add,msg.t==='u'?1800:2600);
+    }
+    setTimeout(add,delay);
+}
+
+/* Chat 1: Ahuja & Sons */
+runChat('cd1',[
+    {t:'u',m:'Do you have eggless cakes?'},
+    {t:'a',m:'Yes! 100% eggless for ALL cakes 🎂 Same taste. What are you celebrating?'},
+    {t:'u',m:'Birthday. 2kg chocolate. Delivery Rohini?'},
+    {t:'a',m:'Perfect! 🎉 Rohini delivery in 2-4 hours. Share address to confirm!'},
+    {t:'u',m:'Any sugar-free options?'},
+    {t:'a',m:'Yes! Sugar-free Kaju Katli, Gulab Jamun & Besan Ladoo available 🍬'},
+    {t:'u',m:'Bulk order for 200 people?'},
+    {t:'a',m:'Absolutely! Special bulk pricing. Share your event date for a custom quote 🎉'},
+],2000);
+
+/* Chat 2: Dental */
+runChat('cd2',[
+    {t:'u',m:'I need a root canal appointment.'},
+    {t:'a',m:'Of course! 🦷 Dr. Sharma available Tomorrow 11 AM and 3 PM. Which slot?'},
+    {t:'u',m:'11 AM. Do you accept insurance?'},
+    {t:'a',m:'Yes! Star Health, HDFC Ergo & Bajaj Allianz. Carry your policy card. Confirmed 11 AM! ✅'},
+    {t:'u',m:'Cost without insurance?'},
+    {t:'a',m:'Root canal from ₹3,500. EMI via Bajaj Finserv available. Want payment details? 🦷'},
+],5000);
+
+/* Chat 3: Coaching */
+runChat('cd3',[
+    {t:'u',m:'JEE batches starting soon?'},
+    {t:'a',m:'Yes! 🎯 JEE Advanced batch starts 15th Jan. Limited seats. Reserve one?'},
+    {t:'u',m:'Fees?'},
+    {t:'a',m:'₹85,000/year with EMI. Study material, mock tests & doubt sessions included. Free demo class? 📖'},
+    {t:'u',m:'Online available?'},
+    {t:'a',m:'Yes! Both offline (Lucknow) and online. Same faculty, same results. Which do you prefer? 🎓'},
+],8000);
+
+/* Chat 4: Restaurant */
+runChat('cd4',[
+    {t:'u',m:'Table for 8 this Saturday 8 PM?'},
+    {t:'a',m:'Great choice! 🍛 Saturday 8 PM for 8 guests available. Private dining area?'},
+    {t:'u',m:'Yes. Corporate bulk orders?'},
+    {t:'a',m:'Absolutely! 🎉 50-500 people from ₹350/person. Want our catering brochure? 📋'},
+    {t:'u',m:'Yes send it.'},
+    {t:'a',m:'Sending now! ✅ Our team calls within 1 hour. Your name please?'},
+],11000);
+
+/* Chat 5: Garments */
+runChat('cd5',[
+    {t:'u',m:'Designer sarees under ₹5000?'},
+    {t:'a',m:'Yes! 👗 200+ designer sarees ₹2,500-₹5,000. Wedding, festive or casual?'},
+    {t:'u',m:'Wedding. Can I see the catalog?'},
+    {t:'a',m:'Sending Wedding Collection now! ✨ Free alterations + home delivery Delhi NCR. Your size?'},
+    {t:'u',m:'Size 38.'},
+    {t:'a',m:'Size 38 reserved! 💫 Cash, UPI, Card & EMI (0% for 3 months above ₹3000). Confirm?'},
+],14000);
+
+/* ============================
+   NAV ACTIVE LINKS
+============================ */
+const secs=document.querySelectorAll('section');
+const navAs=document.querySelectorAll(
+    '.nav-links a:not(.nav-btn)');
+window.addEventListener('scroll',()=>{
+    let cur4='';
+    secs.forEach(s=>{
+        if(window.scrollY>=s.offsetTop-160)
+            cur4=s.id;
+    });
+    navAs.forEach(a=>{
+        a.style.color='';
+        if(a.getAttribute('href')==='#'+cur4)
+            a.style.color='#00d4ff';
+    });
+});
+</script>
+</body>
+</html>
